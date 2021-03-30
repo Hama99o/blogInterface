@@ -18,7 +18,10 @@ export default {
     }
   }
 }
-</script>
+</script >
 <style scoped>
+h1{
+  color:yellow;
+}
 
 </style>
