@@ -1,0 +1,15 @@
+<div class="container studies article mt-7 mt-sm-8 mb-5">
+  <h1 class="mb-5">New User</h1>
+
+  <div>
+    <%= link_to @company, class: "btn btn-outline-dark" do %>
+      <i class="fas fa-arrow-circle-left"></i> Back
+    <% end %>
+  </div>
+
+  <%= render 'form', company_user:[@company , @company_user] %>
+
+  <div class="py-2 px-3 bg-danger text-white">
+    Attention : Un email de création de password sera envoyé dès la création de l'utilisateur
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="container studies article mt-7 mt-sm-8 mb-5">
+
+  <h1 class="mb-5">Edit User</h1>
+
+  <div>
+    <%= link_to company_path(@company_user.company_id), class: " btn btn-outline-dark" do %>
+        <i class="fas fa-arrow-circle-left"></i> Back
+    <% end %>
+  </div>
+
+  <%= render 'form', company_user: @company_user %>
+
+</div>
