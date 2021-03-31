@@ -12,7 +12,9 @@ export default {
     'add-blog': addBlog
   },
   data () {
+    return{
 
+    }
   },
   methods: {
 
