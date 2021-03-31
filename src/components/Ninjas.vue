@@ -10,18 +10,16 @@
 </template>
 <script>
 export default {
-data(){
-  return{
-      ninjas: [
-        {name: 'Hama', speciality: 'Vue Components', show: false},
-        {name: 'John', speciality: 'HTML Wizardry', show: false},
-        {name: 'Peter', speciality: 'Click Events', show: false},
-        {name: 'Tango', speciality: 'Conditionals', show: false},
-        {name: 'Kami', speciality: 'Webpack', show: false},
-        {name: 'Yoshi', speciality: 'Data Diggin', show: false}
-      ]
+  props:['ninjas'],
+  data(){
+    return{
     }
   }
+  // method:{
+  //   test: function(){
+  //      this.ninjas
+  //   }
+  // }
 }
 </script>
 <style scoped>

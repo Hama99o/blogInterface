@@ -6,11 +6,12 @@
 
 <script>
 export default {
-    data () {
-        return {
-          title:'Hama Ninja'
-        }
+  props:['title'],
+  data () {
+    return {
+
     }
+  }
 }
 </script>
 

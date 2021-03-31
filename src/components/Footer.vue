@@ -6,11 +6,12 @@
 
 <script>
 export default {
-    data () {
-        return {
-          copyright: 'Companyright 2021 Hama'
-        }
+  props:['copyright'],
+  data () {
+    return {
+
     }
+  }
 }
 </script>
 
