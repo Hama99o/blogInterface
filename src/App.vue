@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-header v-bind:title="title"> </app-header>
+    <app-header v-bind:title="title" v-on:changeTitle="updateTitle($event)"> </app-header>
     <app-ninjas v-bind:ninjas="ninjas"> </app-ninjas>
     <app-footer v-bind:title="title"> </app-footer>
 
@@ -31,6 +31,11 @@ export default {
         {name: 'Yoshi', speciality: 'Data Diggin', show: false}
       ],
       title:'Hama Ninja'
+    }
+  },
+  methods:{
+    updateTitle: function(updateTitle){
+      this.title = updateTitle
     }
   }
 }
