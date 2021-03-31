@@ -1,45 +1,38 @@
 <template>
   <div>
-  <form-helper>
-    <div slot="form-header">
-      <h3>This is the title of the form</h3>
-      <p>Information about the form </p>
-    </div>
-    <div slot="form-fields">
-      <input type="text" placeholder="name" required />
-      <input type="password" placeholder="password" required />
-    </div>
-    <div slot="form-controls">
-      <button v-on:click='handleSubmit' >Submit </button>
-    </div>
-    <div slot="useful-liks">
-      <h3></h3>
-    </div>
-
-   </form-helper>
+    <keep-alive>
+      <component v-bind:is="component"></component>
+    </keep-alive>
+    <button v-on:click="component = 'form-one'">Show form one</button>
+    <button v-on:click="component = 'form-two'">Show form two</button>
   </div>
 </template>
 
 <script>
-import formHelper from './components/formHelper.vue';
-
+// Imports
+import formOne from './components/formOne.vue';
+import formTwo from './components/formTwo.vue';
 export default {
   components: {
-    'form-helper': formHelper
+    'form-one': formOne,
+    'form-two': formTwo
   },
   data () {
-    return{
-    title: 'hello i am tile from data app.vue'
+    return {
+    component: 'form-one'
     }
   },
-  methods:{
-    handleSubmit:function(){
-
+  methods: {
+    handleSubmit: function(){
+      alert('thanks for submitting');
     }
-
   }
 }
 </script>
-<style>
 
+<style>
+body{
+  margin: 0;
+  font-family: 'Nunito SemiBold';
+}
 </style>
