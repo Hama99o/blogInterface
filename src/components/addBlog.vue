@@ -46,29 +46,25 @@
 <script>
 export default {
   data () {
-    return{
-      blog:{
-      title:"",
-      content:"",
-      categories:[],
-      author:""
-      },
-      authors:["The Net Ninja", "The Vue Vindicator", "The Angular Avenger"],
-      submitted: false
-    }
-  },
-  methods: {
-    post: function(){
-       this.$http.post('http://jsonplaceholder.typicode.com/posts', {
-          title: this.blog.title,
-          body: this.blog.content,
-          userId: 1
-        }).then(function(data){
-        console.log(data);
-        this.submitted = true;
-      });
-    }
-  }
+    return {
+     blog: {
+       title: '',
+       content: '',
+       categories: [],
+       author: ''
+     },
+     authors: ['The Net Ninja', 'The Angular Avenger', 'The Vue Vindicator'],
+     submitted: false
+     }
+ },
+ methods: {
+   post: function(){
+     this.$http.post('https://myrailblog-default-rtdb.europe-west1.firebasedatabase.app/post.json', this.blog).then(function(data){
+       console.log(data);
+       this.submitted = true;
+     });
+   }
+ }
 }
 </script>
 
