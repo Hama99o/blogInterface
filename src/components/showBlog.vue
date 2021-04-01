@@ -1,8 +1,8 @@
 <template>
-  <div id="show-blog">
+  <div id="show-blogs" v-theme:column>
     <h1>All Blog Articles</h1>
     <div v-for="blog in blogs" class="single-blog" v-bind:key="blog" >
-      <h2>{{blog.title}}</h2>
+      <h2 v-rainbow>{{blog.title }}</h2>
       <article>
         {{blog.body}}
       </article>
@@ -30,8 +30,14 @@ export default {
 </script>
 
 <style>
-body{
-  margin: 0;
-  font-family: 'Nunito SemiBold';
+#show-blogs{
+  max-width: 800px;
+  margin: 0px auto;
+}
+.single-blog{
+  padding: 20px;
+  margin: 20px 0;
+  box-sizing: border-box;
+  background: #eee;
 }
 </style>
