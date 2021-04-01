@@ -3,9 +3,9 @@
     <input type="text" v-model="search" placeholder="searching box" >
     <h1>All Blog Articles</h1>
     <div v-for="blog in filteredBlogs" class="single-blog" v-bind:key="blog" >
-    <router-link v-bind:to="'/blog/'+blog.id"><h2>{{blog.title}}</h2></router-link>
+    <router-link v-bind:to="'/blog/'+ blog.id"><h2>{{blog.title}}</h2></router-link>
       <article>
-        {{blog.body}}
+        {{blog.content}}
       </article>
     </div>
   </div>
@@ -25,8 +25,15 @@ export default {
 
   },
   created() {
-   this.$http.get('http://jsonplaceholder.typicode.com/posts').then(function(data){
-     this.blogs = data.body.slice(0,2);
+    this.$http.get('https://myrailblog-default-rtdb.europe-west1.firebasedatabase.app/post.json').then(function(data){
+     return data.json();
+   }).then(function(data){
+     var blogsArray = []
+     for(let key in data){
+      data[key].id = key
+      blogsArray.push(data[key])
+     }
+      this.blogs = blogsArray
    });
  },
  mixins:[searchMixin]
