@@ -52,8 +52,5 @@ nav{
     padding: 14px 0;
     margin-bottom: 40px;
 }
-.router-link-active{
-    background: #eee;
-    color: #444;
-}
+
 </style>

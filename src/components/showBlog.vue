@@ -3,7 +3,7 @@
     <input type="text" v-model="search" placeholder="searching box" >
     <h1>All Blog Articles</h1>
     <div v-for="blog in filteredBlogs" class="single-blog" v-bind:key="blog" >
-      <h2 >{{blog.title}}</h2>
+    <router-link v-bind:to="'/blog/'+blog.id"><h2>{{blog.title}}</h2></router-link>
       <article>
         {{blog.body}}
       </article>
