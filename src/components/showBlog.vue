@@ -1,10 +1,11 @@
 <template>
-  <div id="show-blogs" v-theme:column>
+  <div id="show-blogs" >
+    <input type="text" v-model="search" placeholder="searching box" >
     <h1>All Blog Articles</h1>
-    <div v-for="blog in blogs" class="single-blog" v-bind:key="blog" >
-      <h2 v-rainbow>{{blog.title }}</h2>
+    <div v-for="blog in filteredBlogs" class="single-blog" v-bind:key="blog" >
+      <h2>{{blog.title | to-uppercase }}</h2>
       <article>
-        {{blog.body}}
+        {{blog.body | snipped}}
       </article>
     </div>
   </div>
@@ -15,7 +16,8 @@
 export default {
   data () {
     return{
-      blogs:[]
+      blogs:[],
+      search:''
     }
   },
   methods: {
@@ -25,7 +27,14 @@ export default {
    this.$http.get('http://jsonplaceholder.typicode.com/posts').then(function(data){
      this.blogs = data.body.slice(0,10);
    });
-  }
+ },
+ computed:{
+   filteredBlogs:function(){
+     return this.blogs.filter((blog)=>{
+       return blog.title.match(this.search);
+     });
+   }
+ }
 }
 </script>
 
