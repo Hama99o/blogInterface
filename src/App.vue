@@ -1,8 +1,7 @@
 <template>
   <div>
     <!-- <add-blog>  </add-blog> -->
-    <show-blog>  </show-blog>
-    <list-blog>  </list-blog>
+  <router-view> </router-view>
 
 
   </div>
@@ -11,14 +10,14 @@
 <script>
 
 // import addBlog from './components/addBlog.vue';
-import showBlog from './components/showBlog.vue';
-import listBlogs from './components/listBlogs.vue';
+// import showBlog from './components/showBlog.vue';
+// import listBlogs from './components/listBlogs.vue';
 
 
 export default {
   components: {
-    'list-blog': listBlogs,
-    'show-blog': showBlog
+    // 'list-blog': listBlogs,
+    // 'show-blog': showBlog
 
   },
   data () {
