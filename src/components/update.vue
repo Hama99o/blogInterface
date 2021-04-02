@@ -5,16 +5,22 @@
       <b-button  v-bind:to="'/update/'+ id" class="mb-5 ml-2" variant="success" exact>Edit blog</b-button>
 
     </div>
-
-    <h1>{{blog.title}}</h1>
-    <article >
-      {{blog.content}}
-    </article>
-    <p>Author: {{ blog.author }}</p>
-    <p>Categories:</p>
-    <ul>
-       <li v-for="category in blog.categories" v-bind:key="category">{{ category }}</li>
-    </ul>
+    <form v-if="!submitted">
+      <label>Blog Title </label>
+      <input type="text" v-model.lazy="blog.title" required class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Write a title" />
+      <label>Blog Content </label>
+      <textarea v-model.lazy="blog.content" type="text" class="form-control" accesskey="" rows="8" id="textarea-rows" aria-label="Large" placeholder="Write a statement" aria-describedby="inputGroup-sizing-sm"> </textarea>
+      <div id="checkboxes">
+        <b-form-group label="Using options array:" v-slot="{ ariaDescribedby }" class="mt-5">
+        <b-form-checkbox-group  id="checkbox-group-1"  v-model="blog.categories"  :options="ninjas" :aria-describedby="ariaDescribedby"  name="flavour-1" ></b-form-checkbox-group>
+        </b-form-group>
+      </div>
+      <div>
+      <label>Language:</label>
+      <b-form-select v-model="blog.author" :options="options" size="sm" class="mt-3 mb-5"></b-form-select>
+      </div>
+      <b-button variant="success" v-on:click.prevent="post">Add Blog </b-button>
+    </form>
   </div>
 </template>
 
