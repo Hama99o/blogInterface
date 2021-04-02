@@ -1,26 +1,19 @@
 <template>
   <div id="add-blog">
-    <h2>Add a nNew Blog Post </h2>
+    <h2>Add a New Blog Post </h2>
     <form v-if="!submitted">
       <label>Blog Title </label>
-      <input type="text" v-model.lazy="blog.title" required />
+      <input type="text" v-model.lazy="blog.title" required class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Write a title" />
       <label>Blog Content </label>
-      <textarea v-model.lazy="blog.content"> </textarea>
+      <textarea v-model.lazy="blog.content" type="text" class="form-control" accesskey="" rows="8" id="textarea-rows" aria-label="Large" placeholder="Write a statement" aria-describedby="inputGroup-sizing-sm"> </textarea>
       <div id="checkboxes">
-      <label>Ninjas </label>
-      <input type="checkbox" value="ninjas" v-model="blog.categories" />
-      <label>Wizards </label>
-      <input type="checkbox" value="wizards" v-model="blog.categories"  />
-      <label>Mario</label>
-      <input type="checkbox" value="mario" v-model="blog.categories"  />
-      <label>Chesses </label>
-      <input type="checkbox" value="chesses" v-model="blog.categories"  />
+        <b-form-group label="Using options array:" v-slot="{ ariaDescribedby }" class="mt-5">
+        <b-form-checkbox-group  id="checkbox-group-1"  v-model="blog.categories"  :options="ninjas" :aria-describedby="ariaDescribedby"  name="flavour-1" ></b-form-checkbox-group>
+        </b-form-group>
       </div>
       <div>
-      <label>Author:</label>
-        <select v-model="blog.author">
-          <option v-for="author in authors" v-bind:key="author"> {{author}}</option>
-        </select>
+      <label>Language:</label>
+      <b-form-select v-model="blog.author" :options="options" size="sm" class="mt-3 mb-5"></b-form-select>
       </div>
       <b-button variant="success" v-on:click.prevent="post">Add Blog </b-button>
     </form>
@@ -51,11 +44,23 @@ export default {
        title: '',
        content: '',
        categories: [],
-       author: ''
+       author: 'JavaScript'
      },
-     authors: ['The Net Ninja', 'The Angular Avenger', 'The Vue Vindicator'],
-     submitted: false
-     }
+    options: [
+      { value: 'JavaScript', text: 'JavaScript' },
+      { value: 'Ruby', text: 'Ruby' },
+      { value: 'PHP', text: 'PHP' },
+      { value: 'C++', text: 'C++' },
+      { value: 'Python', text: 'Python', disabled: true }
+    ],
+    ninjas: [
+      { text: 'Orange', value: 'orange' },
+      { text: 'Apple', value: 'apple' },
+      { text: 'Pineapple', value: 'pineapple' },
+      { text: 'Grape', value: 'grape' }
+    ],
+    submitted: false
+  }
  },
  methods: {
    post: function(){
