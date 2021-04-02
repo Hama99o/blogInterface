@@ -1,8 +1,8 @@
 <template lang="html">
   <div id="single-blog" class="mt-3">
     <div class="">
-      <b-button variant="danger" class="mb-5 " v-on:click="destroyed">Destroy blog</b-button>
-      <b-button  v-bind:to="'/update/'+ id" class="mb-5 ml-2" variant="success" exact>Edit blog</b-button>
+      <b-button variant="danger" class="mb-5 " v-on:click="destroyed">Destroy article</b-button>
+      <b-button  v-bind:to="'/update/'+ id" class="mb-5 ml-2" variant="success" exact>Edit article</b-button>
 
     </div>
     <form v-if="!submitted">
