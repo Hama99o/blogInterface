@@ -1,5 +1,6 @@
 <template lang="html">
-  <div id="single-blog">
+  <div id="single-blog" class="mt-3">
+    <b-button variant="danger" class="mb-5" v-on:click="destroyed">Destroy blog</b-button>
     <h1>{{blog.title}}</h1>
     <article >
       {{blog.content}}
@@ -27,7 +28,15 @@ export default {
    }).then(function(data){
      this.blog = data;
    });
-  }
+ },
+ methods:{
+   destroyed: function(){
+     alert('are you sure')
+     this.$http.delete('https://myrailblog-default-rtdb.europe-west1.firebasedatabase.app/post/' + this.id + '.json').then(function(){
+       return this.$router.push({path: '/'});
+     })
+   }
+ }
 }
 </script>
 
