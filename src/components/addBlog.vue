@@ -22,7 +22,7 @@
           <option v-for="author in authors" v-bind:key="author"> {{author}}</option>
         </select>
       </div>
-      <button v-on:click.prevent="post"> Add Blog </button>
+      <b-button variant="success" v-on:click.prevent="post">Add Blog </b-button>
     </form>
     <div v-if="submitted">
       <h1>Thanks for adding your post</h1>

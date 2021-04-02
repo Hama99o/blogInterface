@@ -1,6 +1,7 @@
 <template>
   <div id="show-blogs" >
-    <input type="text" v-model="search" placeholder="searching box" >
+    <!-- <input type="text" v-model="search" placeholder="searching box" > -->
+    <b-form-input size="sm" class="mr-sm-2 input" placeholder="Search" type="text" v-model="search" ></b-form-input>
     <h1>All Blog Articles</h1>
     <div v-for="blog in filteredBlogs" class="single-blog" v-bind:key="blog" >
     <router-link v-bind:to="'/blog/'+ blog.id"><h2>{{blog.title}}</h2></router-link>
@@ -41,8 +42,10 @@ export default {
 </script>
 
 <style>
-input{
+.input{
   margin-top: 40px;
+  margin-bottom: 20px;
+
 }
 #show-blogs{
   max-width: 800px;
