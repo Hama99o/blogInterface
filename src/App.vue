@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-transparent text-dark">
   <!-- <add-blog>  </add-blog> -->
   <app-header> </app-header>
   <router-view> </router-view>
@@ -37,6 +37,7 @@ export default {
 
 <style>
 body{
+  background-color:rgb(250, 28, 65);
   margin: 0;
   font-family: 'Nunito SemiBold';
 }
