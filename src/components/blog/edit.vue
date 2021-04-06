@@ -3,7 +3,7 @@
     <div class="">
       <b-button  v-bind:to="'/blog/'+ id" class="mb-5 " variant=" btn btn-outline-dark" exact>Back</b-button>
     </div>
-
+    <h2 class="text-center">Edit a Article </h2>
     <form v-if="!submitted">
       <label>Blog Title </label>
       <input type="text" v-model.lazy="blog.title" required class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Write a title" />
