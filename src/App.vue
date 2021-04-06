@@ -12,7 +12,7 @@
 // import addBlog from './components/addBlog.vue';
 // import showBlog from './components/showBlog.vue';
 // import listBlogs from './components/listBlogs.vue';
-import Header from './components/Header.vue';
+import Header from './components/layout/Header.vue';
 
 
 
