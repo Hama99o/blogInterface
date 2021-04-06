@@ -22,6 +22,8 @@
 
 <script>
   import getMixin from '../../mixins/getMixin'
+  import destroyed from '../../mixins/destroyed'
+
   export default {
     data(){
       return{
@@ -29,14 +31,7 @@
         blog:{}
       }
     },
-    methods:{
-      destroyed: async function(){
-      if(confirm('are you sure?'))
-        await this.$http.delete('https://myrailblog-default-rtdb.europe-west1.firebasedatabase.app/post/' + this.id + '.json')
-        return this.$router.push({path: '/'})
-     }
-   },
-   mixins:[getMixin]
+   mixins:[getMixin,destroyed]
   }
 </script>
 
