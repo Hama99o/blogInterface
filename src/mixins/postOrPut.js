@@ -1,13 +1,10 @@
 export default{
   methods:{
-    postOrPut: function(){
+    postOrPut: async function(){
       if(this.$route.path == "/add" ) {
         if (this.blog.title && this.blog.content) {
-          console.log(this.errors)
-          this.$http.post('https://myrailblog-default-rtdb.europe-west1.firebasedatabase.app/post.json', this.blog).then(function(data){
-            console.log(data)
-            this.submitted = true
-          })
+          await this.$http.post('https://myrailblog-default-rtdb.europe-west1.firebasedatabase.app/post.json', this.blog)
+          this.submitted = true
         }
         this.errors =[]
         if (!this.blog.title){
@@ -19,10 +16,8 @@ export default{
 
       }else {
         if (this.blog.title && this.blog.content) {
-          this.$http.put('https://myrailblog-default-rtdb.europe-west1.firebasedatabase.app/post/' + this.id + '.json', this.blog).then(function(data){
-            console.log(data)
-            this.submitted = true
-          })
+          await this.$http.put('https://myrailblog-default-rtdb.europe-west1.firebasedatabase.app/post/' + this.id + '.json', this.blog)
+          this.submitted = true
         }
         this.errors =[]
         if (!this.blog.title){
