@@ -1,7 +1,8 @@
 <template lang="html">
   <div id="single-blog" class="mt-3">
     <div class="">
-      <b-button  v-bind:to="'/update/'+ id" class="mb-5 ml-2" variant="success" exact>Edit article</b-button>
+      <b-button  v-bind:to="'/blog/'+ id" class="mb-5 " variant=" btn btn-outline-dark" exact>Back</b-button>
+
     </div>
 
     <form v-if="!submitted">
@@ -18,7 +19,7 @@
         <label>Language:</label>
         <b-form-select v-model="blog.author" :options="options" size="sm" class="mt-3 mb-5"></b-form-select>
       </div>
-      <b-button variant="success" v-on:click.prevent="save()">Add Blog </b-button>
+      <b-button variant="btn btn-primary" v-on:click.prevent="save()">Add Blog </b-button>
     </form>
 
     <div v-if="submitted">

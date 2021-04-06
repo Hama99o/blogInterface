@@ -1,5 +1,7 @@
 <template>
   <div id="add-blog" >
+    <b-button  v-bind:to="'/'" class="mb-5 " variant=" btn btn-outline-dark" exact>Back</b-button>
+
     <h2>Add a New Blog Post </h2>
     <form v-if="!submitted">
       <label>Blog Title </label>
@@ -18,7 +20,7 @@
       <b-form-select v-model="blog.author" :options="options" size="sm" class="mt-3 mb-5"></b-form-select>
       </div>
 
-      <b-button variant="success" v-on:click.prevent="post">Add Blog </b-button>
+      <b-button variant="btn btn-primary" v-on:click.prevent="post">Add Blog </b-button>
     </form>
 
     <div v-if="submitted">
