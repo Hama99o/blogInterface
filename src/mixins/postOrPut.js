@@ -1,6 +1,6 @@
 export default{
   methods:{
-    postOrSave: function(){
+    postOrPut: function(){
       if(this.$route.path == "/add" ) {
         if (this.blog.title && this.blog.content) {
           console.log(this.errors)

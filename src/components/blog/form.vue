@@ -25,7 +25,7 @@
       <b-form-select v-model="blog.author" :options="options" size="sm" class="mt-3 mb-5"></b-form-select>
       </div>
 
-      <b-button variant="btn btn-primary" v-on:click.prevent="postOrSave">Add Blog </b-button>
+      <b-button variant="btn btn-primary" v-on:click.prevent="postOrPut">Add Blog </b-button>
     </form>
 
     <div id="preview">
@@ -52,7 +52,7 @@
 <script>
   import formDataMixin from '../../mixins/formDataMixin'
   import getMixin from '../../mixins/getMixin'
-  import postOrSave from '../../mixins/postOrSave'
+  import postOrPut from '../../mixins/postOrPut'
   export default {
     data () {
       return {
@@ -68,7 +68,7 @@
         }
       }
     },
-    mixins:[formDataMixin,getMixin,postOrSave]
+    mixins:[formDataMixin,getMixin,postOrPut]
   }
 </script>
 
