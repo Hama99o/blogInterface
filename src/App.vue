@@ -3,26 +3,21 @@
   <!-- <add-blog>  </add-blog> -->
   <app-header> </app-header>
   <router-view> </router-view>
-  <app-footer> </app-footer> 
+  <app-footer> </app-footer>
 
   </div>
 </template>
 
 <script>
 
-// import addBlog from './components/addBlog.vue';
-// import showBlog from './components/showBlog.vue';
-// import listBlogs from './components/listBlogs.vue';
-import Header from './components/layout/Header.vue';
-import Footer from './components/layout/Footer.vue';
+import Header from './components/layout/Header.vue'
+import Footer from './components/layout/Footer.vue'
 
 
 
 
 export default {
   components: {
-    // 'list-blog': listBlogs,
-    // 'show-blog': showBlog
     'app-header': Header,
     'app-footer': Footer
 
