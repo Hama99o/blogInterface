@@ -29,17 +29,12 @@
 
 <script>
   import formDataMixin from '../../mixins/formDataMixin'
+  import getMixin from '../../mixins/getMixin'
+
   export default {
     data(){
       return{
       }
-    },
-    created() {
-     this.$http.get('https://myrailblog-default-rtdb.europe-west1.firebasedatabase.app/post/' + this.id + '.json').then(function(data){
-       return data.json();
-     }).then(function(data){
-       this.blog = data;
-     });
     },
     methods:{
       save: function(){
@@ -49,7 +44,7 @@
         });
       }
     },
-    mixins:[formDataMixin]
+    mixins:[formDataMixin,getMixin]
   }
 </script>
 

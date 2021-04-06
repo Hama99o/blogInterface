@@ -18,20 +18,13 @@
 </template>
 
 <script>
-
+  import getMixin from '../../mixins/getMixin'
   export default {
     data(){
       return{
         id: this.$route.params.id,
         blog:{}
       }
-    },
-    created() {
-      this.$http.get('https://myrailblog-default-rtdb.europe-west1.firebasedatabase.app/post/' + this.id + '.json').then(function(data){
-       return data.json();
-      }).then(function(data){
-       this.blog = data;
-      });
     },
     methods:{
      destroyed: function(){
@@ -40,7 +33,8 @@
         return this.$router.push({path: '/'});
       })
      }
-    }
+   },
+   mixins:[getMixin]
   }
 </script>
 
