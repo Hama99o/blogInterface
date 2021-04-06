@@ -2,7 +2,6 @@
   <div id="single-blog" class="mt-3">
     <div class="">
       <b-button  v-bind:to="'/blog/'+ id" class="mb-5 " variant=" btn btn-outline-dark" exact>Back</b-button>
-
     </div>
 
     <form v-if="!submitted">
