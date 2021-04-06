@@ -24,8 +24,8 @@ Vue.use(BootStrapVue);
 
 // Register routes
 const router = new VueRouter({
-    mode:'history',
-    routes: Routes
+  mode:'history',
+  routes: Routes
 });
 
 new Vue({
