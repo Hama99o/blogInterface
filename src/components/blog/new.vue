@@ -42,30 +42,11 @@
 </template>
 
 <script>
+import formDataMixin from '../../mixins/formDataMixin'
 export default {
   data () {
     return {
-     blog: {
-       title: '',
-       content: '',
-       categories: [],
-       author: 'JavaScript'
-     },
-    options: [
-      { value: 'JavaScript', text: 'JavaScript' },
-      { value: 'Ruby', text: 'Ruby' },
-      { value: 'PHP', text: 'PHP' },
-      { value: 'C++', text: 'C++' },
-      { value: 'Python', text: 'Python', disabled: true }
-    ],
-    ninjas: [
-      { text: 'Orange', value: 'orange' },
-      { text: 'Apple', value: 'apple' },
-      { text: 'Pineapple', value: 'pineapple' },
-      { text: 'Grape', value: 'grape' }
-    ],
-    submitted: false
-  }
+    }
  },
  methods: {
    post: function(){
@@ -74,7 +55,8 @@ export default {
        this.submitted = true;
      });
    }
- }
+ },
+ mixins:[formDataMixin]
 }
 </script>
 

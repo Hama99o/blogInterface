@@ -28,30 +28,10 @@
 </template>
 
 <script>
+  import formDataMixin from '../../mixins/formDataMixin'
   export default {
     data(){
       return{
-        id: this.$route.params.id,
-        options: [
-          { value: 'JavaScript', text: 'JavaScript' },
-          { value: 'Ruby', text: 'Ruby' },
-          { value: 'PHP', text: 'PHP' },
-          { value: 'C++', text: 'C++' },
-          { value: 'Python', text: 'Python', disabled: true }
-        ],
-        ninjas: [
-          { text: 'Orange', value: 'orange' },
-          { text: 'Apple', value: 'apple' },
-          { text: 'Pineapple', value: 'pineapple' },
-          { text: 'Grape', value: 'grape' }
-        ],
-        submitted: false,
-        blog: {
-          title: '',
-          content: '',
-          categories: [],
-          author: 'JavaScript'
-        }
       }
     },
     created() {
@@ -65,16 +45,17 @@
      destroyed: function(){
       if(confirm('are you sure?'))
       this.$http.delete('https://myrailblog-default-rtdb.europe-west1.firebasedatabase.app/post/' + this.id + '.json').then(function(){
-       return this.$router.push({path: '/'});
-      })
-    },
-    save: function(){
-      this.$http.put('https://myrailblog-default-rtdb.europe-west1.firebasedatabase.app/post/' + this.id + '.json', this.blog).then(function(data){
+        return this.$router.push({path: '/'});
+        })
+      },
+      save: function(){
+        this.$http.put('https://myrailblog-default-rtdb.europe-west1.firebasedatabase.app/post/' + this.id + '.json', this.blog).then(function(data){
           console.log(data);
           this.submitted = true;
         });
       }
-    }
+    },
+    mixins:[formDataMixin]
   }
 </script>
 
