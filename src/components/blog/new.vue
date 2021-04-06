@@ -1,8 +1,6 @@
 <template>
   <div id="add-blog" >
     <b-button  v-bind:to="'/'" class="mb-5 " variant=" btn btn-outline-dark" exact>Back</b-button>
-
-    <h2 class="text-center">Add a New Article </h2>
     <blog-form> </blog-form>
 
     <div id="preview">

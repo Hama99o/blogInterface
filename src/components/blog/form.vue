@@ -1,5 +1,7 @@
 <template>
   <div id="add-blog" >
+    <h2 class="text-center"> {{label()}} Article </h2>
+
     <form v-if="!submitted">
       <label>Blog Title </label>
       <input type="text" v-model.lazy="blog.title" required class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Write a title" />
@@ -21,7 +23,7 @@
     </form>
 
     <div v-if="submitted">
-      <h1>rticle saved</h1>
+      <h1>Article saved</h1>
     </div>
 
 
@@ -30,6 +32,8 @@
 
 <script>
 import formDataMixin from '../../mixins/formDataMixin'
+import getMixin from '../../mixins/getMixin'
+
 
 export default {
   data () {
@@ -42,9 +46,16 @@ export default {
        console.log(data);
        this.submitted = true;
      });
+   },
+   label: function(){
+     if(this.$route.path == "/add" ){
+       return  'Add a New Aticle '
+     }else{
+       return 'Edit '
+     }
    }
  },
- mixins:[formDataMixin]
+ mixins:[formDataMixin,getMixin]
 }
 </script>
 
