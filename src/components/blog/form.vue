@@ -1,8 +1,14 @@
 <template>
   <div id="add-blog" >
-    <h2 class="text-center"> {{label()}} Article </h2>
+    <div class="bg-secondary" v-show="errors.length ">
+    <b class="text-center">Please correct the following error(s):</b>
+      <ul v-for="error,index in errors" v-bind:key="index">
+        <li>{{error}}</li>
+      </ul>
+    </div>
+    <form v-if="!submitted" >
 
-    <form v-if="!submitted">
+      <h2 class="text-center"> {{label()}} Article </h2>
       <label>Blog Title </label>
       <input type="text" v-model.lazy="blog.title" required class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Write a title" />
       <label>Blog Content </label>
@@ -38,24 +44,38 @@ import getMixin from '../../mixins/getMixin'
 export default {
   data () {
     return {
+      errors:[]
     }
- },
- methods: {
-   post: function(){
-     this.$http.post('https://myrailblog-default-rtdb.europe-west1.firebasedatabase.app/post.json', this.blog).then(function(data){
-       console.log(data);
-       this.submitted = true;
-     });
-   },
-   label: function(){
-     if(this.$route.path == "/add" ){
-       return  'Add a New Aticle '
-     }else{
-       return 'Edit '
-     }
-   }
- },
- mixins:[formDataMixin,getMixin]
+  },
+  methods: {
+
+    post: function(e){
+      if (this.blog.title && this.blog.content) {
+        console.log(this.errors)
+        this.$http.post('https://myrailblog-default-rtdb.europe-west1.firebasedatabase.app/post.json', this.blog).then(function(data){
+          console.log(data)
+          this.submitted = true
+        })
+      }
+      this.errors =[]
+      if (!this.blog.title){
+        this.errors.push("title is empty")
+      }
+      if (!this.blog.content){
+        this.errors.push("content is empty")
+      }
+
+      e.preventDefault();
+    },
+    label: function(){
+      if(this.$route.path == "/add" ){
+        return  'Add a New Aticle '
+      }else{
+        return 'Edit '
+      }
+    }
+  },
+  mixins:[formDataMixin,getMixin]
 }
 </script>
 
