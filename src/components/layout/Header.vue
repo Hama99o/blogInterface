@@ -24,27 +24,22 @@
 </template>
 
 <script>
-import searchMixin from '../../mixins/searchMixin';
+  export default {
+
+    components: {
 
 
+    },
+    data () {
+      return{
 
-export default {
-
-  components: {
-
-
-  },
-  data () {
-    return{
+      }
+    },
+    methods: {
 
     }
-  },
-  methods: {
 
-  },
-  mixins:[searchMixin]
-
-}
+  }
 </script>
 
 <style scoped>

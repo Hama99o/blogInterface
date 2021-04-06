@@ -1,6 +1,5 @@
 <template>
   <div id="show-blogs" >
-    <!-- <input type="text" v-model="search" placeholder="searching box" > -->
     <b-form-input size="sm" class="mr-sm-2 input" placeholder="Search" type="text" v-model="search" ></b-form-input>
     <h1>All Blog Articles</h1>
     <div v-for="blog in filteredBlogs" class="single-blog" v-bind:key="blog.id" >
@@ -14,32 +13,31 @@
 </template>
 
 <script>
-import searchMixin from '../../mixins/searchMixin';
-
-export default {
-  data () {
-    return{
-      blogs:[],
-      search:''
-    }
-  },
-  methods: {
-
-  },
-  created() {
-    this.$http.get('https://myrailblog-default-rtdb.europe-west1.firebasedatabase.app/post.json').then(function(data){
-      return data.json()
-    }).then(function(data){
-      var blogsArray = []
-      for(let key in data){
-        data[key].id = key
-        blogsArray.push(data[key])
+  import searchMixin from '../../mixins/searchMixin';
+  export default {
+    data () {
+      return{
+        blogs:[],
+        search:''
       }
-      this.blogs = blogsArray
-    })
-  },
-  mixins:[searchMixin]
-}
+    },
+    methods: {
+
+    },
+    created() {
+      this.$http.get('https://myrailblog-default-rtdb.europe-west1.firebasedatabase.app/post.json').then(function(data){
+        return data.json()
+      }).then(function(data){
+        var blogsArray = []
+        for(let key in data){
+          data[key].id = key
+          blogsArray.push(data[key])
+        }
+        this.blogs = blogsArray
+      })
+    },
+    mixins:[searchMixin]
+  }
 </script>
 
 <style>
