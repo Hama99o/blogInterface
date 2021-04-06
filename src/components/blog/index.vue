@@ -13,7 +13,9 @@
 </template>
 
 <script>
-  import searchMixin from '../../mixins/searchMixin';
+  import searchMixin from '../../mixins/searchMixin'
+  import createMixin from '../../mixins/createMixin'
+
   export default {
     data () {
       return{
@@ -24,19 +26,7 @@
     methods: {
 
     },
-    created() {
-      this.$http.get('https://myrailblog-default-rtdb.europe-west1.firebasedatabase.app/post.json').then(function(data){
-        return data.json()
-      }).then(function(data){
-        var blogsArray = []
-        for(let key in data){
-          data[key].id = key
-          blogsArray.push(data[key])
-        }
-        this.blogs = blogsArray
-      })
-    },
-    mixins:[searchMixin]
+    mixins:[searchMixin,createMixin]
   }
 </script>
 

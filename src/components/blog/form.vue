@@ -25,8 +25,21 @@
       <b-form-select v-model="blog.author" :options="options" size="sm" class="mt-3 mb-5"></b-form-select>
       </div>
 
-      <b-button variant="btn btn-primary" v-on:click.prevent="post">Add Blog </b-button>
+      <b-button variant="btn btn-primary" v-on:click.prevent="postOrSave">Add Blog </b-button>
     </form>
+
+    <div id="preview">
+      <h3>Preview Blog </h3>
+      <p> Blog title:{{blog.title}} </p>
+      <p> Blog content:</p>
+      <p>{{blog.content}}</p>
+      <p>Blog Categories</p>
+      <ul>
+        <li  v-for="category in blog.categories" v-bind:key="category">{{category}} </li>
+      </ul>
+      <p>Author:{{blog.author}}</p>
+
+    </div>
 
     <div v-if="submitted">
       <h1>Article saved</h1>
@@ -37,46 +50,26 @@
 </template>
 
 <script>
-import formDataMixin from '../../mixins/formDataMixin'
-import getMixin from '../../mixins/getMixin'
-
-
-export default {
-  data () {
-    return {
-      errors:[]
-    }
-  },
-  methods: {
-
-    post: function(e){
-      if (this.blog.title && this.blog.content) {
-        console.log(this.errors)
-        this.$http.post('https://myrailblog-default-rtdb.europe-west1.firebasedatabase.app/post.json', this.blog).then(function(data){
-          console.log(data)
-          this.submitted = true
-        })
+  import formDataMixin from '../../mixins/formDataMixin'
+  import getMixin from '../../mixins/getMixin'
+  import postOrSave from '../../mixins/postOrSave'
+  export default {
+    data () {
+      return {
+        errors:[]
       }
-      this.errors =[]
-      if (!this.blog.title){
-        this.errors.push("title is empty")
-      }
-      if (!this.blog.content){
-        this.errors.push("content is empty")
-      }
-
-      e.preventDefault();
     },
-    label: function(){
-      if(this.$route.path == "/add" ){
-        return  'Add a New Aticle '
-      }else{
-        return 'Edit '
+    methods: {
+      label: function(){
+        if(this.$route.path == "/add" ){
+          return  'Add a New Aticle '
+        }else{
+          return 'Edit '
+        }
       }
-    }
-  },
-  mixins:[formDataMixin,getMixin]
-}
+    },
+    mixins:[formDataMixin,getMixin,postOrSave]
+  }
 </script>
 
 <style>

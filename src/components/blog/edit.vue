@@ -23,12 +23,6 @@
       'blog-form': blogForm
     },
     methods:{
-      save: function(){
-        this.$http.put('https://myrailblog-default-rtdb.europe-west1.firebasedatabase.app/post/' + this.id + '.json', this.blog).then(function(data){
-          console.log(data);
-          this.submitted = true;
-        });
-      }
     },
     mixins:[formDataMixin,getMixin]
   }

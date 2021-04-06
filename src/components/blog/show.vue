@@ -43,10 +43,10 @@
 
 <style lang="css" scoped>
 #single-blog{
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px dotted #aaa;
-    background: #F5F5F5;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px dotted #aaa;
+  background: #F5F5F5;
 }
 </style>
