@@ -42,12 +42,6 @@
      });
     },
     methods:{
-     destroyed: function(){
-      if(confirm('are you sure?'))
-      this.$http.delete('https://myrailblog-default-rtdb.europe-west1.firebasedatabase.app/post/' + this.id + '.json').then(function(){
-        return this.$router.push({path: '/'});
-        })
-      },
       save: function(){
         this.$http.put('https://myrailblog-default-rtdb.europe-west1.firebasedatabase.app/post/' + this.id + '.json', this.blog).then(function(data){
           console.log(data);
