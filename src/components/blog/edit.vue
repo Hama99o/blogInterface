@@ -1,7 +1,7 @@
 <template lang="html">
-  <div id="single-blog" class="mt-3">
+  <div id="add-blog" >
     <div class="">
-      <b-button  v-bind:to="'/blog/'+ id" class="mb-5 " variant=" btn btn-outline-dark" exact>Back</b-button>
+      <b-button  v-bind:to="'/blog/'+ id" variant=" btn btn-outline-dark" exact>Back</b-button>
     </div>
     <h2 class="text-center">Edit a Article </h2>
     <form v-if="!submitted">
@@ -49,11 +49,36 @@
 </script>
 
 <style lang="css" scoped>
-#single-blog{
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px dotted #aaa;
-    background: #F5F5F5;
+#add-blog *{
+  box-sizing: border-box;
+}
+#add-blog{
+  margin: 20px auto;
+  max-width: 500px;
+}
+label{
+  display: block;
+  margin: 20px 0 10px;
+}
+input[type="text"], textarea{
+  display: block;
+  width: 100%;
+  padding: 8px;
+}
+#preview{
+  padding: 10px 20px;
+  border: 1px dotted #ccc;
+  margin: 30px 0;
+}
+h3{
+  margin-top: 10px;
+}
+#checkboxes input{
+  display:inline-block;
+  margin-right:10px;
+
+}
+#checkboxes label{
+  display:inline-block;
 }
 </style>

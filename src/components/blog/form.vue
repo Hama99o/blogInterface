@@ -30,6 +30,7 @@
 
 <script>
 import formDataMixin from '../../mixins/formDataMixin'
+
 export default {
   data () {
     return {
