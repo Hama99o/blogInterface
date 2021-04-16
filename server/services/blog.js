@@ -19,11 +19,14 @@ const blogUrls = {
     return all_data
   },
   async updateArticle (articleId, article) {
-    const body = {
-      article: article
-    }
+    const body = article
     console.log(body)
     const { data } = await axios.put(blogUrls.article(articleId), body)
-    return data.article
+    return data
+  },
+  async createArticle ( article) {
+    const body =  article
+    const { data } = await axios.post(blogUrls.articles, body)
+    return data
   }
 }

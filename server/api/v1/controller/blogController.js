@@ -26,5 +26,13 @@ const bot = require('../../../services/blog.js')
     } catch (error) {
       next(error)
     }
+  },
+  async createArticle (req, res, next) {
+    try {
+      const article = await bot.createArticle(req.body)
+      res.send( article )
+    } catch (error) {
+      next(error)
+    }
   }
 }
