@@ -3,7 +3,7 @@ export default{
     postOrPut: async function(){
       if(this.$route.path == "/add" ) {
         if (this.blog.title && this.blog.content) {
-          await this.$http.post('https://myrailblog-default-rtdb.europe-west1.firebasedatabase.app/post.json', this.blog)
+          await this.$http.post('http://localhost:8080/ressources', this.blog)
           this.submitted = true
         }
         this.errors =[]
@@ -16,7 +16,7 @@ export default{
 
       }else {
         if (this.blog.title && this.blog.content) {
-          await this.$http.put('https://myrailblog-default-rtdb.europe-west1.firebasedatabase.app/post/' + this.id + '.json', this.blog)
+          await this.$http.put('http://localhost:8080/ressources/' + this.id, this.blog)
           this.submitted = true
         }
         this.errors =[]

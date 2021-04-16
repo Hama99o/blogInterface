@@ -15,8 +15,7 @@ const blogUrls = {
   },
   async getArticle(articleId) {
     const { data } = await axios.get(blogUrls.article(articleId))
-    const all_data = await data
-    return all_data
+    return await data
   },
   async updateArticle (articleId, article) {
     const body = article
