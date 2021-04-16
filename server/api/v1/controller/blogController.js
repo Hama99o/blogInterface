@@ -34,5 +34,14 @@ const bot = require('../../../services/blog.js')
     } catch (error) {
       next(error)
     }
+  },
+  async destroyArticle (req, res, next) {
+    try {
+      const atricleId = req.params.id
+      const article = await bot.destroyArticle(atricleId, req.body)
+      res.send( article )
+    } catch (error) {
+      next(error)
+    }
   }
 }

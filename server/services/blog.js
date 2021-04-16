@@ -28,5 +28,11 @@ const blogUrls = {
     const body =  article
     const { data } = await axios.post(blogUrls.articles, body)
     return data
-  }
+  },
+  async destroyArticle (articleId, article) {
+    const body = article
+    console.log(body)
+    const { data } = await axios.delete(blogUrls.article(articleId), body)
+    return data
+  },
 }
