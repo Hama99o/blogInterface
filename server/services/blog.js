@@ -1,6 +1,5 @@
 const axios = require('axios')
- const apiUrl = 'https://myrailblog-default-rtdb.europe-west1.firebasedatabase.app'
-
+const apiUrl = 'https://myrailblog-default-rtdb.europe-west1.firebasedatabase.app'
 
 const blogUrls = {
   articles: `${apiUrl}/post.json`,
@@ -33,5 +32,5 @@ const blogUrls = {
     console.log(body)
     const { data } = await axios.delete(blogUrls.article(articleId), body)
     return data
-  },
+  }
 }

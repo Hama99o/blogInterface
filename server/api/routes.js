@@ -10,4 +10,4 @@ router.delete('/ressources/:id', blogController.destroyArticle)
 
 
 
-module.exports = router;
+module.exports = router
