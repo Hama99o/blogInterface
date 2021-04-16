@@ -10,17 +10,17 @@ export default {
         { value: 'Python', text: 'Python', disabled: true }
       ],
       ninjas: [
-        { text: 'Orange', value: 'orange' },
-        { text: 'Apple', value: 'apple' },
-        { text: 'Pineapple', value: 'pineapple' },
-        { text: 'Grape', value: 'grape' }
+        { text: 'Easy', value: 'Easy' },
+        { text: 'Medium', value: 'Medium' },
+        { text: 'Hard', value: 'Hard' },
+        { text: 'Posible', value: 'Posible' }
       ],
       submitted: false,
       blog: {
         title: '',
         content: '',
         categories: [],
-        author: 'JavaScript'
+        language: 'JavaScript'
       }
     }
   }

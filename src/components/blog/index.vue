@@ -5,7 +5,7 @@
     <div v-for="blog in filteredBlogs" class="single-blog" v-bind:key="blog.id" >
     <router-link v-bind:to="'/blog/'+ blog.id" class="text-decoration-none text-dark"><h2>{{blog.title}}</h2>
       <article >
-        {{blog.content}}
+        {{blog.content.substring(1, 200) + "..."}}
       </article>
     </router-link>
     </div>

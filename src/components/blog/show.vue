@@ -11,7 +11,7 @@
     <article >
       {{blog.content}}
     </article>
-    <p>Author: {{ blog.author }}</p>
+    <p>language: {{ blog.language }}</p>
     <p>Categories:</p>
     <ul>
       <li v-for="category in blog.categories" v-bind:key="category">{{ category }}</li>

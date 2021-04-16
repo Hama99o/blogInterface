@@ -22,7 +22,7 @@
 
       <div>
       <label>Language:</label>
-      <b-form-select v-model="blog.author" :options="options" size="sm" class="mt-3 mb-5"></b-form-select>
+      <b-form-select v-model="blog.language" :options="options" size="sm" class="mt-3 mb-5"></b-form-select>
       </div>
 
       <b-button variant="btn btn-primary" v-on:click.prevent="postOrPut">Add Blog </b-button>
@@ -37,7 +37,7 @@
       <ul>
         <li  v-for="category in blog.categories" v-bind:key="category">{{category}} </li>
       </ul>
-      <p>Author:{{blog.author}}</p>
+      <p>language:{{blog.language}}</p>
 
     </div>
 
