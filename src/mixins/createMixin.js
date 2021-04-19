@@ -1,11 +1,12 @@
+import back from '../services/back.js'
+
 export default {
   async created() {
-    const all_data = await this.$http.get('http://localhost:8080/api/articles')
-    const data = await all_data.json()
+    const articles = await back.getArticles()
     var blogsArray = []
-    for(let key in data){
-      data[key].id = key
-      blogsArray.push(data[key])
+    for(let key in articles){
+      articles[key].id = key
+      blogsArray.push(articles[key])
     }
     this.blogs = blogsArray
   }
