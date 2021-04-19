@@ -39,7 +39,7 @@
 }
 #show-blogs{
   max-width: 800px;
-  margin: 0px auto;
+  margin: 0px auto 80px auto;
   text-decoration: none;
   color:black;
 }

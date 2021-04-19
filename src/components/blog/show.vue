@@ -16,7 +16,7 @@
     <ul>
       <li v-for="category in blog.categories" v-bind:key="category">{{ category }}</li>
     </ul>
-    <b-button  v-bind:to="'/add'" class="mt-8" variant="btn btn-primary" exact>New</b-button>
+    <b-button  v-bind:to="'/add'" class="mt-8" variant="btn btn-primary" exact>New Article</b-button>
   </div>
 </template>
 

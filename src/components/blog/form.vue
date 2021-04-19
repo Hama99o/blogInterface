@@ -77,7 +77,7 @@
   box-sizing: border-box;
 }
 #add-blog{
-  margin: 20px auto;
+  margin: 20px auto 80px auto;
   max-width: 500px;
 }
 label{
