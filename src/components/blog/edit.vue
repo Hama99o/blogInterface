@@ -14,7 +14,7 @@
 
 <script>
   import formDataMixin from '../../mixins/formDataMixin'
-  import getMixin from '../../mixins/getMixin'
+  import back from '../../mixins/back'
   import blogForm from './form.vue'
 
 
@@ -24,7 +24,7 @@
     },
     methods:{
     },
-    mixins:[formDataMixin,getMixin]
+    mixins:[formDataMixin,back]
   }
 </script>
 

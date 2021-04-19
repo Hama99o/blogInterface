@@ -51,8 +51,8 @@
 
 <script>
   import formDataMixin from '../../mixins/formDataMixin'
-  import getMixin from '../../mixins/getMixin'
-  import postOrPut from '../../mixins/postOrPut'
+  import back from '../../mixins/back.js'
+
   export default {
     data () {
       return {
@@ -68,7 +68,7 @@
         }
       }
     },
-    mixins:[formDataMixin,getMixin,postOrPut]
+    mixins:[formDataMixin,back]
   }
 </script>
 

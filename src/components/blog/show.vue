@@ -21,8 +21,7 @@
 </template>
 
 <script>
-  import getMixin from '../../mixins/getMixin'
-  import destroyed from '../../mixins/destroyed'
+  import back from '../../mixins/back.js'
 
   export default {
     data(){
@@ -31,7 +30,7 @@
         blog:{}
       }
     },
-   mixins:[getMixin,destroyed]
+   mixins:[back]
   }
 </script>
 

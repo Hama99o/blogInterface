@@ -14,7 +14,7 @@
 
 <script>
   import searchMixin from '../../mixins/searchMixin'
-  import createMixin from '../../mixins/createMixin'
+  import back from '../../mixins/back.js'
 
   export default {
     data () {
@@ -26,7 +26,7 @@
     methods: {
 
     },
-    mixins:[searchMixin,createMixin]
+    mixins:[searchMixin,back]
   }
 </script>
 
