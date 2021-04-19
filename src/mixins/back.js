@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const root_url = 'http://localhost:8080/'
+const root_url = process.env.VUE_APP_BACKEND_URL
 
 export default {
   created: function(){
