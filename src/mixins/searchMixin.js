@@ -5,5 +5,5 @@ export default{
         return blog.title.match(this.search)
       })
     }
-   }
+  }
 }

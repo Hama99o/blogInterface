@@ -41,8 +41,7 @@ export default {
         if (!this.blog.content){
           this.errors.push("content is empty")
         }
-
-        }else {
+      }else {
         if (this.blog.title && this.blog.content) {
           await axios.put(`${root_url}api/articles/${this.id}`, this.blog)
           this.submitted = true

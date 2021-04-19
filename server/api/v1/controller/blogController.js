@@ -4,7 +4,6 @@ const bot = require('../../../services/blog.js')
      try {
       const articles = await bot.getArticles()
       res.send( articles )
-
     } catch (error) {
       next(error)
     }
