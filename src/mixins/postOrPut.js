@@ -3,7 +3,7 @@ export default{
     postOrPut: async function(){
       if(this.$route.path == "/add" ) {
         if (this.blog.title && this.blog.content) {
-          await this.$http.post('http://localhost:8080/api/ressources', this.blog)
+          await this.$http.post('http://localhost:8080/api/articles', this.blog)
           this.submitted = true
         }
         this.errors =[]
@@ -16,7 +16,7 @@ export default{
 
       }else {
         if (this.blog.title && this.blog.content) {
-          await this.$http.put('http://localhost:8080/api/ressources/' + this.id, this.blog)
+          await this.$http.put('http://localhost:8080/api/articles/' + this.id, this.blog)
           this.submitted = true
         }
         this.errors =[]
