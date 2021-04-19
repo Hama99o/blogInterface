@@ -1,9 +1,10 @@
+import back from '../services/back.js'
+
 export default {
   async created() {
     if(this.$route.path != "/add" ) {
-      const all_data = await this.$http.get('http://localhost:8080/api/articles/' + this.id )
-      const data = await all_data.json()
-      this.blog =  data
+      const article = await back.getArticle(this.id)
+      this.blog =  article
     }
   }
 }
