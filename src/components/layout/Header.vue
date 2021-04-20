@@ -2,7 +2,7 @@
   <div>
   <b-navbar type="dark" variant="dark">
     <b-navbar-nav >
-      <b-navbar-brand><router-link to='/' exact class="text-decoration-none text-success">Articles</router-link></b-navbar-brand>
+      <b-navbar-brand><router-link to='/' exact class="text-decoration-none text-success articles">Articles</router-link></b-navbar-brand>
       <b-nav-item><li><router-link to='/add' exact class="text-decoration-none text-success">Add New Article</router-link></li></b-nav-item>
       <b-nav-item href="#" disabled>Disabled</b-nav-item>
       <!-- Navbar dropdowns -->
