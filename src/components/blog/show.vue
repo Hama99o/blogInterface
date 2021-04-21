@@ -1,7 +1,7 @@
 <template lang="html">
   <div id="single-blog" class="mt-3">
     <div class="">
-      <b-button  v-bind:to="'/'" class="mb-5 " variant=" btn btn-outline-dark" exact>Back</b-button>
+      <b-button  v-bind:to="'/'" class="mb-5 back-to-index" variant=" btn btn-outline-dark"  exact>Back</b-button>
       <b-button  v-bind:to="'/update/'+ id" class="mb-5 ml-3" variant="ml-3 btn btn-info" exact>Edit</b-button>
       <b-button variant="danger" class="mb-5 ml-3 btn btn-warning " v-on:click="destroyed">Delete</b-button>
 
