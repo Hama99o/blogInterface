@@ -19,10 +19,10 @@ module.exports = {
                 'path': 'tests_output/screenshots'
             },
             'desiredCapabilities': {
-                'browserName': 'chrome'//,
-                // 'chromeOptions': {
-                //     'args': ['--headless']
-                // }
+                'browserName': 'chrome',
+                'chromeOptions': {
+                    'args': ['--headless']
+                }
             }
         }
     }

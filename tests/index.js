@@ -10,7 +10,7 @@ module.exports = {
       .waitForElementVisible(articles)
       .assert.containsText(articles,"Articles")
       page.clickOnGihubLink('@github')
-      browser.assert.urlContains(hama, 'URL: it has Hama Text')
+      browser.assert.urlContains(hama, 'URL: it has "/Hama99o" Text')
 
 
   }
