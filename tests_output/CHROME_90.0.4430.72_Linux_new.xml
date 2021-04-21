@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="0"
+            tests="1">
+
+  <testsuite name="new"
+    errors="1" failures="0" hostname="" id="" package="new" skipped="0"
+    tests="1" time="7.596" timestamp="">
+  
+    <testcase name="New page:" classname="new" time="7.596" assertions="2">
+
+    
+<system-out>[[ATTACHMENT|/home/hama/Apps/blog.vue/vuejs-playlist/tests_output/screenshots/new/New-page:_FAILED_Apr-21-2021-161054-GMT+0200.png]]</system-out>
+    
+    <error message="An error occurred while running .click() command on &lt;Element [name=@selectLanguage]&gt;:   (Session info: chrome=90.0.4430.72),  (Driver info: chromedriver=90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}),platform=Linux 5.8.0-50-generic x86_64); element click intercepted: Element &lt;select class=&#34;mt-3 mb-5 select-language custom-select custom-select-sm&#34; id=&#34;__BVID__36&#34;&gt;...&lt;/select&gt; is not clickable at point (513, 706). Other element would receive the click: &lt;div data-v-3d302860=&#34;&#34; class=&#34;text-center p-3&#34; style=&#34;background-color: rgba(0, 0, 0, 0.2);&#34;&gt;...&lt;/div&gt;" type="error"><![CDATA[
+    TimeoutError: An error occurred while running .click() command on &lt;Element [name=@selectLanguage]&gt;:   (Session info: chrome=90.0.4430.72),  (Driver info: chromedriver=90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}),platform=Linux 5.8.0-50-generic x86_64); element click intercepted: Element &lt;select class=&#34;mt-3 mb-5 select-language custom-select custom-select-sm&#34; id=&#34;__BVID__36&#34;&gt;...&lt;/select&gt; is not clickable at point (513, 706). Other element would receive the click: &lt;div data-v-3d302860=&#34;&#34; class=&#34;text-center p-3&#34; style=&#34;background-color: rgba(0, 0, 0, 0.2);&#34;&gt;...&lt;/div&gt;
+    at PeriodicPromise.getError (/home/hama/Apps/blog.vue/vuejs-playlist/node_modules/nightwatch/lib/utils/periodic-promise.js:161:12)
+    at PeriodicPromise.perform (/home/hama/Apps/blog.vue/vuejs-playlist/node_modules/nightwatch/lib/utils/periodic-promise.js:111:16)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async PeriodicPromise.runAction (/home/hama/Apps/blog.vue/vuejs-playlist/node_modules/nightwatch/lib/utils/periodic-promise.js:48:22)
+    at async PeriodicPromise.runAction (/home/hama/Apps/blog.vue/vuejs-playlist/node_modules/nightwatch/lib/utils/periodic-promise.js:51:16)
+    ]]></error>
+    
+    </testcase>
+  
+
+  
+    <system-err>
+        TimeoutError: An error occurred while running .click() command on &lt;Element [name=@selectLanguage]&gt;:   (Session info: chrome=90.0.4430.72),  (Driver info: chromedriver=90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}),platform=Linux 5.8.0-50-generic x86_64); element click intercepted: Element &lt;select class=&#34;mt-3 mb-5 select-language custom-select custom-select-sm&#34; id=&#34;__BVID__36&#34;&gt;...&lt;/select&gt; is not clickable at point (513, 706). Other element would receive the click: &lt;div data-v-3d302860=&#34;&#34; class=&#34;text-center p-3&#34; style=&#34;background-color: rgba(0, 0, 0, 0.2);&#34;&gt;...&lt;/div&gt;
+   {&#34;status&#34;:-1,&#34;state&#34;:&#34;&#34;,&#34;code&#34;:&#34;&#34;,&#34;value&#34;:{&#34;message&#34;:&#34;element click intercepted: Element &lt;select class=\&#34;mt-3 mb-5 select-language custom-select custom-select-sm\&#34; id=\&#34;__BVID__36\&#34;&gt;...&lt;/select&gt; is not clickable at point (513, 706). Other element would receive the click: &lt;div data-v-3d302860=\&#34;\&#34; class=\&#34;text-center p-3\&#34; style=\&#34;background-color: rgba(0, 0, 0, 0.2);\&#34;&gt;...&lt;/div&gt;&#34;,&#34;error&#34;:[&#34;  (Session info: chrome=90.0.4430.72)&#34;,&#34;  (Driver info: chromedriver=90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}),platform=Linux 5.8.0-50-generic x86_64)&#34;]},&#34;errorStatus&#34;:64,&#34;error&#34;:&#34;An unknown error has occurred – element click intercepted: Element &lt;select class=\&#34;mt-3 mb-5 select-language custom-selec...&#34;,&#34;httpStatusCode&#34;:200}
+       at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    </system-err>
+  
+
+    
+
+  
+  </testsuite>
+</testsuites>
