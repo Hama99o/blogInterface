@@ -31,7 +31,9 @@ export default {
    postOrPut: async function(){
       if(this.$route.path == "/add" ) {
         if (this.blog.title && this.blog.content) {
+          this.loading = true
           await axios.post(`${root_url}api/articles`, this.blog)
+          this.loading = false
           this.submitted = true
         }
         this.errors =[]

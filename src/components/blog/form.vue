@@ -25,7 +25,7 @@
       <b-form-select v-model="blog.language" :options="options" size="sm" class="mt-3 mb-5 select-language"></b-form-select>
       </div>
       <div>
-        <b-button variant="btn btn-primary" class="submit-button" v-on:click.prevent="postOrPut" >Add Blog </b-button>
+          <b-button variant="btn btn-primary" class="submit-button" v-on:click.prevent="postOrPut" > {{loading ? "Loading..." : "Add Blog"}}  </b-button>
       </div>
     </form>
 
@@ -57,7 +57,8 @@
   export default {
     data () {
       return {
-        errors:[]
+        errors:[],
+        loading: false
       }
     },
     methods: {

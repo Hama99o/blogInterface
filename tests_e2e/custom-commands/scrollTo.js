@@ -3,6 +3,5 @@ module.exports.command = function (selector) {
     var element = document.querySelector(selector)
     element.scrollIntoView(true)
   }
-
   this.execute(scrollTo, [selector])
 }
