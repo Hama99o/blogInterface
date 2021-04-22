@@ -1,36 +1,66 @@
 const axios = require('axios')
-const apiUrl = 'https://myrailblog-default-rtdb.europe-west1.firebasedatabase.app'
+const caseStyles = require('./caseStyles.js')
+const blogManager = require('../../config/blogManager.js')
 
+const env = process.env.NODE_ENV
+let blogUrl
+// let selfUrl
+
+// TODO: the self url should be given by the server, because the ports are defined here
+if (env === 'test') {
+  blogUrl = 'http://hama99o.herokuapp.com'
+  // selfUrl = 'http://localhost:8083'
+} else if (env === 'development') {
+  blogUrl = blogManager.blogUrl
+  // selfUrl = blogManager.selfUrl
+} else if (env === 'production') {
+  blogUrl = blogManager.blogUrl
+  // selfUrl = blogManager.selfUrl
+} else {
+  const errorString = {
+    envError: `Unknown environment: "${env}"`
+  }
+  throw errorString.envError
+}
+const blogApiUrl = `${blogUrl}/api/v1`
 const blogUrls = {
-  articles: `${apiUrl}/post.json`,
-  article(id) {
-    return `${apiUrl}/post/${id}.json`
+  articles: `${blogApiUrl}/articles`,
+  article (id) {
+    return `${this.articles}/${id}`
+  },
+  articlesPaginated (search, page, per) {
+    return `${this.articles}?page=${page}&per=${per}&search=${search}`
   }
 }
- module.exports = {
-  async getArticles() {
-    const res = await axios.get(blogUrls.articles)
-    return res.data
+module.exports = {
+  blogUrls,
+  async getArticles (search, page, per) {
+    search = search || ''
+    page = page || 0
+    per = per || 15
+
+    const res = await axios.get(blogUrls.articlesPaginated(search, page, per))
+    const articles = res.data.articles.map(article => caseStyles.convertKeysToCamel(article))
+    const nbPages = res.data.meta.nb_pages
+    return { articles: articles, meta: { page, per, nbPages, search } }
   },
-  async getArticle(articleId) {
+  async getArticle (articleId) {
     const { data } = await axios.get(blogUrls.article(articleId))
-    return await data
+    return caseStyles.convertKeysToCamel(data)
   },
   async updateArticle (articleId, article) {
-    const body = article
-    console.log(body)
+    const body = { article: caseStyles.convertKeysToSnake(article) }
     const { data } = await axios.put(blogUrls.article(articleId), body)
-    return data
+    return caseStyles.convertKeysToCamel(data)
   },
-  async createArticle ( article) {
-    const body =  article
+  async createArticle (article) {
+    const body = { article: caseStyles.convertKeysToSnake(article) }
     const { data } = await axios.post(blogUrls.articles, body)
-    return data
+    return caseStyles.convertKeysToCamel(data)
   },
   async destroyArticle (articleId, article) {
-    const body = article
-    console.log(body)
+    const body = { article: caseStyles.convertKeysToSnake(article) }
     const { data } = await axios.delete(blogUrls.article(articleId), body)
-    return data
+    return caseStyles.convertKeysToCamel(data)
   }
 }
