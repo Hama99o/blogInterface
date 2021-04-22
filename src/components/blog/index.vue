@@ -14,7 +14,7 @@
 
 <script>
   import searchMixin from '../../mixins/searchMixin'
-  import createMixin from '../../mixins/createMixin'
+  import back from '../../mixins/back.js'
 
   export default {
     data () {
@@ -26,7 +26,7 @@
     methods: {
 
     },
-    mixins:[searchMixin,createMixin]
+    mixins:[searchMixin,back]
   }
 </script>
 
@@ -39,7 +39,7 @@
 }
 #show-blogs{
   max-width: 800px;
-  margin: 0px auto;
+  margin: 0px auto 80px auto;
   text-decoration: none;
   color:black;
 }

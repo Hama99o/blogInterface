@@ -1,7 +1,7 @@
 <template lang="html">
   <div id="single-blog" class="mt-3">
     <div class="">
-      <b-button  v-bind:to="'/'" class="mb-5 " variant=" btn btn-outline-dark" exact>Back</b-button>
+      <b-button  v-bind:to="'/'" class="mb-5 back-to-index" variant=" btn btn-outline-dark"  exact>Back</b-button>
       <b-button  v-bind:to="'/update/'+ id" class="mb-5 ml-3" variant="ml-3 btn btn-info" exact>Edit</b-button>
       <b-button variant="danger" class="mb-5 ml-3 btn btn-warning " v-on:click="destroyed">Delete</b-button>
 
@@ -16,13 +16,12 @@
     <ul>
       <li v-for="category in blog.categories" v-bind:key="category">{{ category }}</li>
     </ul>
-    <b-button  v-bind:to="'/add'" class="mt-8" variant="btn btn-primary" exact>New</b-button>
+    <b-button  v-bind:to="'/add'" class="mt-8" variant="btn btn-primary" exact>New Article</b-button>
   </div>
 </template>
 
 <script>
-  import getMixin from '../../mixins/getMixin'
-  import destroyed from '../../mixins/destroyed'
+  import back from '../../mixins/back.js'
 
   export default {
     data(){
@@ -31,14 +30,14 @@
         blog:{}
       }
     },
-   mixins:[getMixin,destroyed]
+   mixins:[back]
   }
 </script>
 
 <style lang="css" scoped>
 #single-blog{
   max-width: 960px;
-  margin: 0 auto;
+  margin: 0 auto 80px auto;
   padding: 20px;
   border: 1px dotted #aaa;
   background: #F5F5F5;

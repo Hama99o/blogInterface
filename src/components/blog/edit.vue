@@ -3,9 +3,7 @@
     <div class="">
       <b-button  v-bind:to="'/blog/'+ id" variant=" btn btn-outline-dark" exact>Back</b-button>
     </div>
-
     <blog-form> </blog-form>
-
     <div v-if="submitted">
       <h1>Thanks for editing your post</h1>
     </div>
@@ -14,9 +12,8 @@
 
 <script>
   import formDataMixin from '../../mixins/formDataMixin'
-  import getMixin from '../../mixins/getMixin'
+  import back from '../../mixins/back'
   import blogForm from './form.vue'
-
 
   export default {
     components:{
@@ -24,7 +21,7 @@
     },
     methods:{
     },
-    mixins:[formDataMixin,getMixin]
+    mixins:[formDataMixin,back]
   }
 </script>
 
@@ -56,7 +53,6 @@ h3{
 #checkboxes input{
   display:inline-block;
   margin-right:10px;
-
 }
 #checkboxes label{
   display:inline-block;
