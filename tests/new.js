@@ -4,12 +4,16 @@ module.exports = {
     const page = browser.page.newPageObject()
     const articleSave = '.article-save'
     page
-    .navigate()
-    .setTitle('@title', "Tesing the title." )
-    .setContent('@content', "Testing the content.")
-    .selectLang('@selectLanguage', '@language')
-    .valueEasy('@valueEasy')
-    .submitButton('@submitButton')
+      .navigate()
+      .setTitle('@title', "Tesing the title." )
+      .setContent('@content', "Testing the content.")
+    browser
+      .execute('var select = document.getElementsByClassName("select-language");' + 'select[0].scrollIntoView(true);')
+    page
+      .selectLang('@selectLanguage', '@language')
+      .valueEasy('@valueEasy')
+    page
+      .submitButton('@submitButton')
     browser
       .waitForElementVisible(articleSave)
       .assert.containsText(articleSave,"Article saved")
