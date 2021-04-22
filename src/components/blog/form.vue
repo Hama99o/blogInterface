@@ -10,22 +10,23 @@
 
       <h2 class="text-center"> {{label()}} Article </h2>
       <label>Blog Title </label>
-      <input type="text" v-model.lazy="blog.title" required class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Write a title" />
+      <input type="text" v-model.lazy="blog.title" required class="form-control title" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Write a title" />
       <label>Blog Content </label>
-      <textarea v-model.lazy="blog.content" type="text" class="form-control" accesskey="" rows="8" id="textarea-rows" aria-label="Large" placeholder="Write a statement" aria-describedby="inputGroup-sizing-sm"> </textarea>
+      <textarea v-model.lazy="blog.content" type="text" class="form-control content" accesskey="" rows="8" id="textarea-rows" aria-label="Large" placeholder="Write a statement" aria-describedby="inputGroup-sizing-sm"> </textarea>
 
       <div id="checkboxes">
         <b-form-group label="Using options array:" v-slot="{ ariaDescribedby }" class="mt-5">
-        <b-form-checkbox-group  id="checkbox-group-1"  v-model="blog.categories"  :options="ninjas" :aria-describedby="ariaDescribedby"  name="flavour-1" ></b-form-checkbox-group>
+        <b-form-checkbox-group  id="checkbox-group-1" v-model="blog.categories"  :options="ninjas" :aria-describedby="ariaDescribedby"  name="flavour-1" ></b-form-checkbox-group>
         </b-form-group>
       </div>
 
       <div>
       <label>Language:</label>
-      <b-form-select v-model="blog.language" :options="options" size="sm" class="mt-3 mb-5"></b-form-select>
+      <b-form-select v-model="blog.language" :options="options" size="sm" class="mt-3 mb-5 select-language"></b-form-select>
       </div>
-
-      <b-button variant="btn btn-primary" v-on:click.prevent="postOrPut">Add Blog </b-button>
+      <div>
+        <b-button variant="btn btn-primary" class="submit-button" v-on:click.prevent="postOrPut" >Add Blog </b-button>
+      </div>
     </form>
 
     <div id="preview">
@@ -42,7 +43,7 @@
     </div>
 
     <div v-if="submitted">
-      <h1>Article saved</h1>
+      <h1 class="article-save">Article saved</h1>
     </div>
 
 

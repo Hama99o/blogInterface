@@ -1,4 +1,5 @@
 module.exports = {
+  "@tags": ["index"],
   "blog index "(browser){
     const page = browser.page.indexPageObjects()
     const articles = '.articles'
