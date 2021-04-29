@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "test": "nightwatch",
+    "test:nightwatch": "nightwatch",
+    "test:mocha": "mocha",
     "serve": "NODE_ENV=development vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
@@ -32,9 +33,12 @@
     "@vue/cli-service": "~4.5.0",
     "axios-mock-adapter": "^1.19.0",
     "babel-eslint": "^10.1.0",
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
     "chromedriver": "^90.0.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "mocha": "^6.2.3",
     "nightwatch": "^1.6.3",
     "npm-run-all": "^4.1.5",
     "vue-template-compiler": "^2.6.11"

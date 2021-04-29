@@ -1,9 +1,9 @@
 require('dotenv').config();
 
 module.exports = {
-    'src_folders': ['tests_e2e/tests'],
-    'page_objects_path': ['tests_e2e/page-objects'],
-    'custom_commands_path': ['tests_e2e/custom-commands'],
+    'src_folders': ['tests/tests_e2e/tests'],
+    'page_objects_path': ['tests/tests_e2e/page-objects'],
+    'custom_commands_path': ['tests/tests_e2e/custom-commands'],
     'webdriver': {
         'start_process': true,
         'server_path': require('chromedriver').path,
