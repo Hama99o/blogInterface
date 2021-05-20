@@ -9,7 +9,7 @@ export default {
   },
   methods:{
     async getArticles() {
-      const { data } = await axios.get(`${root_url}api/articles`)
+      const { data } = await axios.get(`${root_url}api/v1/articles`)
       var blogsArray = []
       for(let key in data){
         data[key].id = key
@@ -19,20 +19,20 @@ export default {
     },
     async getArticle() {
       if(this.$route.path != "/add" ) {
-        const { data } = await axios.get(`${root_url}api/articles/${this.id}`)
+        const { data } = await axios.get(`${root_url}api/v1/articles/${this.id}`)
         this.blog =  data
       }
     },
     destroyed: async function(){
       if(confirm('are you sure?'))
-      await axios.delete(`${root_url}api/articles/${this.id}`)
+      await axios.delete(`${root_url}api/v1/articles/${this.id}`)
       return this.$router.push({path: '/'})
     },
    postOrPut: async function(){
       if(this.$route.path == "/add" ) {
         if (this.blog.title && this.blog.content) {
           this.loading = true
-          await axios.post(`${root_url}api/articles`, this.blog)
+          await axios.post(`${root_url}api/v1/articles`, this.blog)
           this.loading = false
           this.submitted = true
         }
@@ -45,7 +45,7 @@ export default {
         }
       }else {
         if (this.blog.title && this.blog.content) {
-          await axios.put(`${root_url}api/articles/${this.id}`, this.blog)
+          await axios.put(`${root_url}api/v1/articles/${this.id}`, this.blog)
           this.submitted = true
         }
         this.errors =[]
