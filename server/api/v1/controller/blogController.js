@@ -12,7 +12,7 @@ const bot = require('../../../services/blog.js')
     try {
       const atricleId = req.params.id
       const article = await bot.getArticle(atricleId)
-      res.send( article)
+      res.send(article)
     } catch (error) {
       next(error)
     }

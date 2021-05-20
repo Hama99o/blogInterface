@@ -1,10 +1,10 @@
 const axios = require('axios')
-const apiUrl = 'https://myrailblog-default-rtdb.europe-west1.firebasedatabase.app'
+const apiUrl = 'http://localhost:3000/api/v1'
 
 const blogUrls = {
-  articles: `${apiUrl}/post.json`,
+  articles: `${apiUrl}/articles`,
   article(id) {
-    return `${apiUrl}/post/${id}.json`
+    return `${articles}/${id}`
   }
 }
  module.exports = {
