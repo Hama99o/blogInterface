@@ -6,7 +6,7 @@ const serveStatic = require('serve-static')
 const path = require('path')
 
 const app = express()
-const PORT = process.env.NODE_ENV === 'development' ? 5000 : process.env.PORT
+const PORT = process.env.NODE_ENV === 'development' ? 8081 : process.env.PORT
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
