@@ -1,11 +1,11 @@
-const bot = require('../../../services/blog.js')
+const blog = require('../../../services/blog.js')
  module.exports = {
    async getArticles (req, res, next) {
      try {
       const search = req.query.search ? encodeURIComponent(req.query.search) : null
       const page = req.query.page
       const per = req.query.per
-      const articles = await bot.getArticles(search, page, per)
+      const articles = await blog.getArticles(search, page, per)
       res.send( articles )
     } catch (error) {
       next(error)
@@ -14,7 +14,7 @@ const bot = require('../../../services/blog.js')
   async getArticle (req, res, next) {
     try {
       const atricleId = req.params.id
-      const article = await bot.getArticle(atricleId)
+      const article = await blog.getArticle(atricleId)
       res.send(article)
     } catch (error) {
       next(error)
@@ -23,7 +23,7 @@ const bot = require('../../../services/blog.js')
   async updateArticle (req, res, next) {
     try {
       const atricleId = req.params.id
-      const article = await bot.updateArticle(atricleId, req.body)
+      const article = await blog.updateArticle(atricleId, req.body)
       res.send( article )
     } catch (error) {
       next(error)
@@ -31,7 +31,7 @@ const bot = require('../../../services/blog.js')
   },
   async createArticle (req, res, next) {
     try {
-      const article = await bot.createArticle(req.body)
+      const article = await blog.createArticle(req.body)
       res.send( article )
     } catch (error) {
       next(error)
@@ -40,7 +40,7 @@ const bot = require('../../../services/blog.js')
   async destroyArticle (req, res, next) {
     try {
       const atricleId = req.params.id
-      const article = await bot.destroyArticle(atricleId, req.body)
+      const article = await blog.destroyArticle(atricleId, req.body)
       res.status(200).send()
     } catch (error) {
       next(error)
