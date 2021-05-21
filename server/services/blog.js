@@ -1,17 +1,33 @@
 const axios = require('axios')
-const apiUrl = 'http://localhost:3000/api/v1'
 const caseStyles = require('./caseStyles.js')
+const blogManager = require('../../config/blogManager.js')
 
+var env = process.env.NODE_ENV
+var blogUrl
+var selfUrl
 
+// TODO: the self url should be given by the server, because the ports are defined here
+if (env === 'test') {
+  blogUrl = blogManager.blogUrl
+  selfUrl = 'http://localhost:8083'
+} else if (env === 'development') {
+  blogUrl = blogManager.blogUrl
+  selfUrl = blogManager.selfUrl
+} else if (env === 'production') {
+  blogUrl = blogManager.blogUrl
+  selfUrl = blogManager.selfUrl
+} else {
+  throw `Unknown environment: "${env}"`
+}
+const blogApiUrl = `${blogUrl}/api/v1`
 const blogUrls = {
-  articles: `${apiUrl}/articles`,
+  articles: `${blogApiUrl}/articles`,
   article(id) {
     return `${this.articles}/${id}`
   },
   articlesPaginated (search, page, per) {
-  return `${this.articles}?page=${page}&per=${per}&search=${search}`
-}
-
+    return `${this.articles}?page=${page}&per=${per}&search=${search}`
+  }
 }
  module.exports = {
   async getArticles(search, page, per) {
