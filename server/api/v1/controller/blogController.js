@@ -2,7 +2,10 @@ const bot = require('../../../services/blog.js')
  module.exports = {
    async getArticles (req, res, next) {
      try {
-      const articles = await bot.getArticles()
+      const search = req.query.search ? encodeURIComponent(req.query.search) : null
+      const page = req.query.page
+      const per = req.query.per
+      const articles = await bot.getArticles(search, page, per)
       res.send( articles )
     } catch (error) {
       next(error)
@@ -38,7 +41,7 @@ const bot = require('../../../services/blog.js')
     try {
       const atricleId = req.params.id
       const article = await bot.destroyArticle(atricleId, req.body)
-      res.send( article )
+      res.status(200).send()
     } catch (error) {
       next(error)
     }
