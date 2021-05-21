@@ -22,6 +22,11 @@ app.use(bodyParser.json())
 app.use('/', serveStatic(path.join(__dirname, '..', 'dist')))
 
 routesForApi(app)
+// Allow CORS in development & test
+if (!isProd) {
+  const cors = require('cors')
+  app.use(cors())
+}
 
 // The actual server
 const server = app.listen(port, () => {

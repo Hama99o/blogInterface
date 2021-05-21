@@ -1,5 +1,3 @@
-
-
 module.exports = {
   articlesUnique (id) {
     const newArticles = JSON.parse(JSON.stringify(this.article))
@@ -8,17 +6,17 @@ module.exports = {
   },
   articles () {
     var result = []
-    for (let id = 1; i < 50; i++) {
+    for (let id = 1; id < 50; id++) {
       result.push(this.articlesUnique(id))
     }
     return result
   },
 
   article: {
-    "id":20,
-    "title":"ihsan",
-    "content":"ihsan",
-    "categories":"all",
-    "language":"fr"
+    id:20,
+    title:"ihsan",
+    content:"ihsan",
+    categories:"all",
+    language:"fr"
   }
 }

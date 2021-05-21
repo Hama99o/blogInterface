@@ -10,7 +10,8 @@
     "lint": "vue-cli-service lint",
     "start": "NODE_ENV=production node server/server.js",
     "start:dev": "NODE_ENV=development nodemon server/server.js",
-    "all": "NODE_ENV=development npm-run-all --parallel serve start:dev"
+    "all": "NODE_ENV=development npm-run-all --parallel serve start:dev",
+    "start:test": "NODE_ENV=test Blog_THEME=blogDevelopment nodemon server/server.js"
   },
   "dependencies": {
     "axios": "^0.21.1",
