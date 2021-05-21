@@ -6,4 +6,4 @@ const factory = require('./factory.js')
 
 
 var mock
-const botUrls = bot.blogUrls
+const blogUrls = blog.blogUrls
