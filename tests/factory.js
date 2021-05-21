@@ -1,0 +1,24 @@
+
+
+module.exports = {
+  articlesUnique (id) {
+    const newArticles = JSON.parse(JSON.stringify(this.article))
+    newArticles.id = id
+    return newArticles
+  },
+  articles () {
+    var result = []
+    for (let id = 1; i < 50; i++) {
+      result.push(this.articlesUnique(id))
+    }
+    return result
+  },
+
+  article: {
+    "id":20,
+    "title":"ihsan",
+    "content":"ihsan",
+    "categories":"all",
+    "language":"fr"
+  }
+}
