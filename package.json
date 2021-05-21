@@ -3,20 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "test:nightwatch": "nightwatch",
-    "test:mocha": "mocha",
+    "test:nightwatch": "NODE_ENV=test nightwatch",
+    "test:mocha": "NODE_ENV=test mocha",
     "serve": "NODE_ENV=development vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "start": "NODE_ENV=production node server/server.js",
     "start:dev": "NODE_ENV=development nodemon server/server.js",
-    "all": "npm-run-all --parallel serve start:dev"
+    "all": "NODE_ENV=development npm-run-all --parallel serve start:dev"
   },
   "dependencies": {
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.6.0",
     "bootstrap-vue": "^2.21.2",
+    "compression": "^1.7.4",
     "concurrently": "^6.0.2",
     "core-js": "^3.6.5",
     "cors": "^2.8.5",

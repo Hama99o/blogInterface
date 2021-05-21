@@ -13,7 +13,7 @@ const blogsConfig = {
   }
 }
 
-const blog = process.env.BLOG_THEME
+const blog = process.env.BLOG_THEME || process.env.VUE_APP_BLOG_THEME
 const isBlog = blog === 'blog' || blog === 'blogStaging' || blog === 'blogDevelopment'
 
 if (!blog) {
@@ -21,7 +21,7 @@ if (!blog) {
 }
 
 if (!blogsConfig[blog]) {
-  throw new Error(`BLOG_THEME "${theme}" is not configurated`)
+  throw new Error(`BLOG_THEME "${blog}" is not configurated`)
 }
 
 // eslint-disable-next-line no-console
