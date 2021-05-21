@@ -8,7 +8,7 @@ var selfUrl
 
 // TODO: the self url should be given by the server, because the ports are defined here
 if (env === 'test') {
-  blogUrl = 'http://jam-free-time-alpha.herokuapp.com'
+  blogUrl = 'http://hama99o.herokuapp.com'
   selfUrl = 'http://localhost:8083'
 } else if (env === 'development') {
   blogUrl = blogManager.blogUrl
