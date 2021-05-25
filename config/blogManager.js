@@ -13,19 +13,19 @@ const blogsConfig = {
   }
 }
 
-const blog = process.env.BLOG_THEME || process.env.VUE_APP_BLOG_THEME
+const blog = process.env.BLOG || process.env.VUE_APP_BLOG
 const isBlog = blog === 'blog' || blog === 'blogStaging' || blog === 'blogDevelopment'
 
 if (!blog) {
-  throw new Error('Environnement variable "BLOG_THEME" does not exist')
+  throw new Error('Environnement variable "BLOG" does not exist')
 }
 
 if (!blogsConfig[blog]) {
-  throw new Error(`BLOG_THEME "${blog}" is not configurated`)
+  throw new Error(`BLOG "${blog}" is not configurated`)
 }
 
 // eslint-disable-next-line no-console
-console.log(`Blog currently configurated for theme "${blog}"`)
+console.log(`Blog currently configurated for "${blog}"`)
 
 module.exports = {
   blog,
