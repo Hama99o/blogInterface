@@ -1,8 +1,8 @@
 const MockAdapter = require('axios-mock-adapter')
 const axios = require('axios')
- const factory = require('./tests/factory.js')
+ const factory = require('../tests/factory.js')
 
-const blog = require('./server/services/blog.js')
+const blog = require('./services/blog.js')
 var blogUrls = blog.blogUrls
 
 var mock
