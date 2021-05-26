@@ -3,17 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "test:nightwatch": "NODE_ENV=test nightwatch",
-    "test:mocha": "NODE_ENV=test mocha",
-    "serve": "NODE_ENV=development vue-cli-service serve",
+    "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "start": "NODE_ENV=production node server/server.js",
+    "start": "node server/server.js",
     "start:dev": "NODE_ENV=development nodemon server/server.js",
-    "all": "NODE_ENV=development npm-run-all --parallel serve start:dev",
-    "start:test": "NODE_ENV=test Blog=blogDevelopment nodemon server/server.js"
+    "start:test": "NODE_ENV=test Blog=blogDevelopment nodemon server/server.js",
+    "test:e2e": "NODE_ENV=test nightwatch",
+    "test:unit": "NODE_ENV=test mocha",
+    "all": "NODE_ENV=development npm-run-all --parallel serve start:dev"
   },
   "dependencies": {
+    "@babel/register": "^7.13.16",
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.6.0",

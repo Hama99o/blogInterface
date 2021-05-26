@@ -17,6 +17,6 @@ module.exports = {
     title:"ihsan",
     content:"ihsan",
     categories:"all",
-    language:"fr"
+    language:"ruby"
   }
 }
