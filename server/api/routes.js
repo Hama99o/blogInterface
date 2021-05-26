@@ -1,9 +1,7 @@
 const blogController = require('./v1/controller/blogController.js')
-const testing = require('../testing.js')
-testing.init()
-testing.mockBlogApi()
+const mockController = require('./v1/controller/mockController.js')
 
-
+mockController.init()
 module.exports = (app) => {
   app.get('/api/v1/articles', blogController.getArticles )
   app.get('/api/v1/articles/:id', blogController.getArticle )

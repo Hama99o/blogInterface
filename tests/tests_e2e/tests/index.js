@@ -4,7 +4,6 @@ module.exports = {
     const page = browser.page.indexPageObjects()
     const articles = '.articles'
     const hama = 'blog/'
-    const searchInput = 'babel'
     page
       .navigate()
       .singleBlog('@singleBlog')
