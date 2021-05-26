@@ -5,7 +5,9 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
+    "lint": "eslint \"./**/*.js\" --quiet",
+    "lintFull": "eslint \"./**/*.js\"",
+    "lintFix": "eslint --fix './**/*.js'",
     "start": "node server/server.js",
     "start:dev": "NODE_ENV=development nodemon server/server.js",
     "start:test": "NODE_ENV=test Blog=blogDevelopment nodemon server/server.js",

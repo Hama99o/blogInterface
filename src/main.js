@@ -28,3 +28,4 @@ new Vue({
   render: h => h(App),
   router: router
 })
+// vm.$mount('#app')

@@ -1,12 +1,12 @@
 const blog = require('../../../services/blog.js')
- module.exports = {
-   async getArticles (req, res, next) {
-     try {
+module.exports = {
+  async getArticles (req, res, next) {
+    try {
       const search = req.query.search ? encodeURIComponent(req.query.search) : null
       const page = req.query.page
       const per = req.query.per
       const articles = await blog.getArticles(search, page, per)
-      res.send( articles )
+      res.send(articles)
     } catch (error) {
       next(error)
     }
@@ -24,7 +24,7 @@ const blog = require('../../../services/blog.js')
     try {
       const atricleId = req.params.id
       const article = await blog.updateArticle(atricleId, req.body)
-      res.send( article )
+      res.send(article)
     } catch (error) {
       next(error)
     }
@@ -32,7 +32,7 @@ const blog = require('../../../services/blog.js')
   async createArticle (req, res, next) {
     try {
       const article = await blog.createArticle(req.body)
-      res.send( article )
+      res.send(article)
     } catch (error) {
       next(error)
     }
@@ -40,7 +40,7 @@ const blog = require('../../../services/blog.js')
   async destroyArticle (req, res, next) {
     try {
       const atricleId = req.params.id
-      const article = await blog.destroyArticle(atricleId, req.body)
+      await blog.destroyArticle(atricleId, req.body)
       res.status(200).send()
     } catch (error) {
       next(error)

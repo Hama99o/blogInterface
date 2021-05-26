@@ -12,6 +12,10 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     sourceType: 'module'
   },
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly'
+  },
   plugins: [
     'vue',
     '@typescript-eslint'
@@ -25,11 +29,12 @@ module.exports = {
       files: [
         '**/__tests__/*.{j,t}s?(x)',
         '**/tests/unit/**/*.spec.{j,t}s?(x)',
-        '**/__server____/*.{j,t}s?(x)'
+        '**/server//**/*.{j,t}s?(x)'
       ],
       env: {
         mocha: true
       }
     }
-  ]
+  ],
+  ignorePatterns: ['main.js', 'node_modules', 'dist']
 }

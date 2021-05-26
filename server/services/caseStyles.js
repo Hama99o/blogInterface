@@ -12,7 +12,7 @@ module.exports = {
   convertKeysToCamel (obj) {
     const newObj = {}
 
-    for (var key in obj) {
+    for (const key in obj) {
       newObj[this.snakeToCamel(key)] = obj[key]
     }
 
@@ -21,7 +21,7 @@ module.exports = {
   convertKeysToSnake (obj) {
     const newObj = {}
 
-    for (var key in obj) {
+    for (const key in obj) {
       newObj[this.camelToSnake(key)] = obj[key]
     }
 

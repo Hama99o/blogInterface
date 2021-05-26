@@ -62,7 +62,7 @@ export default {
   },
   methods: {
     label: function () {
-      if (this.$route.path == '/add') {
+      if (this.$route.path === '/add') {
         return 'Add a New Aticle '
       } else {
         return 'Edit '

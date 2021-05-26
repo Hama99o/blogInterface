@@ -3,8 +3,8 @@ const mockController = require('./v1/controller/mockController.js')
 
 mockController.init()
 module.exports = (app) => {
-  app.get('/api/v1/articles', blogController.getArticles )
-  app.get('/api/v1/articles/:id', blogController.getArticle )
+  app.get('/api/v1/articles', blogController.getArticles)
+  app.get('/api/v1/articles/:id', blogController.getArticle)
   app.put('/api/v1/articles/:id', blogController.updateArticle)
   app.post('/api/v1/articles', blogController.createArticle)
   app.delete('/api/v1/articles/:id', blogController.destroyArticle)

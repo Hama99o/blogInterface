@@ -1,11 +1,9 @@
-const axios = require('axios')
 const compression = require('compression')
 const express = require('express')
 const bodyParser = require('body-parser')
 const serveStatic = require('serve-static')
 const path = require('path')
 const routesForApi = require('./api/routes.js')
-
 
 const isDev = process.env.NODE_ENV === 'development'
 const isTest = process.env.NODE_ENV === 'test'
@@ -29,6 +27,6 @@ if (!isProd) {
 }
 
 // The actual server
-const server = app.listen(port, () => {
+app.listen(port, () => {
   console.log('App is running on port ' + port)
 })

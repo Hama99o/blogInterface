@@ -47,6 +47,6 @@ export default {
   padding: 20px;
   margin: 20px 0;
   box-sizing: border-box;
-  background: 	#F5F5F5;
+  background: #F5F5F5;
 }
 </style>
