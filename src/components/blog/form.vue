@@ -46,32 +46,31 @@
       <h1 class="article-save">Article saved</h1>
     </div>
 
-
   </div>
 </template>
 
 <script>
-  import formDataMixin from '../../mixins/formDataMixin'
-  import back from '../../mixins/back.js'
+import formDataMixin from '../../mixins/formDataMixin'
+import back from '../../mixins/back.js'
 
-  export default {
-    data () {
-      return {
-        errors:[],
-        loading: false
+export default {
+  data () {
+    return {
+      errors: [],
+      loading: false
+    }
+  },
+  methods: {
+    label: function () {
+      if (this.$route.path == '/add') {
+        return 'Add a New Aticle '
+      } else {
+        return 'Edit '
       }
-    },
-    methods: {
-      label: function(){
-        if(this.$route.path == "/add" ){
-          return  'Add a New Aticle '
-        }else{
-          return 'Edit '
-        }
-      }
-    },
-    mixins:[formDataMixin,back]
-  }
+    }
+  },
+  mixins: [formDataMixin, back]
+}
 </script>
 
 <style>

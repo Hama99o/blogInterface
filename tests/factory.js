@@ -5,7 +5,7 @@ module.exports = {
     return newArticles
   },
   articles () {
-    var result = []
+    const result = []
     for (let id = 1; id < 50; id++) {
       result.push(this.articlesUnique(id))
     }
@@ -13,10 +13,10 @@ module.exports = {
   },
 
   article: {
-    id:20,
-    title:"ihsan",
-    content:"ihsan",
-    categories:"all",
-    language:"ruby"
+    id: 20,
+    title: 'ihsan',
+    content: 'ihsan',
+    categories: 'all',
+    language: 'ruby'
   }
 }

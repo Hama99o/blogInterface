@@ -1,20 +1,20 @@
 module.exports = {
   url: 'http://localhost:8080/',
-  elements:{
+  elements: {
     github: '.github',
     singleBlog: '.single-blog',
     back: '.back-to-index'
   },
   commands: [{
-    clickOnGihubLink(value){
+    clickOnGihubLink (value) {
       return this
-      .click(value)
+        .click(value)
     },
-    singleBlog(value){
+    singleBlog (value) {
       return this
-      .click(value)
+        .click(value)
     },
-    backToIndex(value){
+    backToIndex (value) {
       return this
         .click(value)
     }

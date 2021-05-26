@@ -8,12 +8,12 @@
 <script>
 import blogForm from './form.vue'
 export default {
-  components:{
+  components: {
     'blog-form': blogForm
   },
   data () {
     return {
-      blog:{}
+      blog: {}
     }
   }
 }

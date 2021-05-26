@@ -13,21 +13,21 @@
 </template>
 
 <script>
-  import searchMixin from '../../mixins/searchMixin'
-  import back from '../../mixins/back.js'
+import searchMixin from '../../mixins/searchMixin'
+import back from '../../mixins/back.js'
 
-  export default {
-    data () {
-      return{
-        blogs:[],
-        search:''
-      }
-    },
-    methods: {
+export default {
+  data () {
+    return {
+      blogs: [],
+      search: ''
+    }
+  },
+  methods: {
 
-    },
-    mixins:[searchMixin,back]
-  }
+  },
+  mixins: [searchMixin, back]
+}
 </script>
 
 <style>

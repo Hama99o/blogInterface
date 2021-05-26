@@ -21,17 +21,17 @@
 </template>
 
 <script>
-  import back from '../../mixins/back.js'
+import back from '../../mixins/back.js'
 
-  export default {
-    data(){
-      return{
-        id: this.$route.params.id,
-        blog:{}
-      }
-    },
-   mixins:[back]
-  }
+export default {
+  data () {
+    return {
+      id: this.$route.params.id,
+      blog: {}
+    }
+  },
+  mixins: [back]
+}
 </script>
 
 <style lang="css" scoped>

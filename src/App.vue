@@ -18,11 +18,9 @@ export default {
     'app-header': Header,
     'app-footer': Footer
 
-
-
   },
   data () {
-    return{
+    return {
 
     }
   },

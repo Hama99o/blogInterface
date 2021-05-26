@@ -3,8 +3,7 @@ import VueResource from 'vue-resource'
 import App from './App.vue'
 import VueRouter from 'vue-router'
 import Routes from './routes'
-import BootStrapVue from 'bootstrap-vue'
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import BootStrapVue, { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
 // Import Bootstrap an BootstrapVue CSS files (order is important)
 import 'bootstrap/dist/css/bootstrap.css'
@@ -20,9 +19,9 @@ Vue.use(BootStrapVue)
 
 // Register routes
 const router = new VueRouter({
-  mode:'history',
+  mode: 'history',
   routes: Routes
-});
+})
 
 new Vue({
   el: '#app',

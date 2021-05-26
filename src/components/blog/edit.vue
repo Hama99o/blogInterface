@@ -11,18 +11,18 @@
 </template>
 
 <script>
-  import formDataMixin from '../../mixins/formDataMixin'
-  import back from '../../mixins/back'
-  import blogForm from './form.vue'
+import formDataMixin from '../../mixins/formDataMixin'
+import back from '../../mixins/back'
+import blogForm from './form.vue'
 
-  export default {
-    components:{
-      'blog-form': blogForm
-    },
-    methods:{
-    },
-    mixins:[formDataMixin,back]
-  }
+export default {
+  components: {
+    'blog-form': blogForm
+  },
+  methods: {
+  },
+  mixins: [formDataMixin, back]
+}
 </script>
 
 <style lang="css" scoped>

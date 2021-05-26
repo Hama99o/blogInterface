@@ -1,6 +1,6 @@
 export default {
-  data(){
-    return{
+  data () {
+    return {
       id: this.$route.params.id,
       options: [
         { value: 'JavaScript', text: 'JavaScript' },
