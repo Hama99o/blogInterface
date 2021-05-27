@@ -1,10 +1,12 @@
 # vuejs-playlist
 
 ## Project setup
+
+Install dependencies
 ```
 npm install
 ```
-
+Set the env variable `Blog` to `blogStaging`
 
 ### Compiles and hot-reloads for development
 Serves the SPA on port 8080
@@ -34,7 +36,28 @@ sudo kill -9 `sudo lsof -t -i:8081`
 npm run build
 ```
 
+## Test mode
+
+### Start the test server
+Start the backend in test mode, on port 8083
+```
+npm run start:test
+```
+
+### Unit tests
+Unit tests need a running backend on port 8083 (for the backend api tests)
+```
+npm run test:unit
+```
+
+To run only specific tests, for example the `"Articles API"` tests :
+
+```
+npm run test:unit -- -g "Articles API"
+```
+
 ### Lints and fixes files
+
 For fixing lint auto error both vue and express side
 ```
 npm run lint:all
@@ -47,6 +70,5 @@ for fixing only out of vue link error
 ```
 npm run lintFix
 ```
-
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
