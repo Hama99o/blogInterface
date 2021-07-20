@@ -1,13 +1,22 @@
-var express = require('express')
-var router = express.Router()
-const blogController = require('./v1/controller/blogController.js')
+const articlesController = require('./v1/articlesController.js')
+const mockController = require('./v1/mockController.js')
 
-router.get('/api/articles', blogController.getArticles )
-router.get('/api/articles/:id', blogController.getArticle )
-router.put('/api/articles/:id', blogController.updateArticle)
-router.post('/api/articles', blogController.createArticle)
-router.delete('/api/articles/:id', blogController.destroyArticle)
+mockController.init()
+module.exports = (app) => {
+  // Articles requests
+  app.get('/api/v1/articles', articlesController.getArticles)
+  app.get('/api/v1/articles/:id', articlesController.getArticle)
+  app.put('/api/v1/articles/:id', articlesController.updateArticle)
+  app.post('/api/v1/articles', articlesController.createArticle)
+  app.delete('/api/v1/articles/:id', articlesController.destroyArticle)
 
+  app.use((error, req, res, next) => {
+    console.error(error.message)
+    console.error(JSON.stringify(error.response.data))
 
-
-module.exports = router
+    res.status(500).send({
+      message: error.message || error,
+      errorData: error.response.data
+    })
+  })
+}
