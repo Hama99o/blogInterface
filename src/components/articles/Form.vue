@@ -40,7 +40,7 @@ export default {
         title: { type: 'text', name: 'Title', required: true },
         content: { type: 'textarea', name: 'Content', required: true },
         language: { type: 'select', name: 'Select language', options: { null: '-', Ruby: 'Ruby', php: 'PHP', JavaScript: 'JavaScript', Python: 'Python' } },
-        categories: { type: 'select', name: 'Select language', options: { null: '-', easy: 'Easy', normal: 'Normal', hard: 'hard' } }
+        categories: { type: 'select', name: 'Categories', options: { null: '-', easy: 'Easy', normal: 'Normal', hard: 'hard' } }
       }
     }
   },
