@@ -2,7 +2,7 @@
   <div class="footer footer-basic bg-dark " type="dark" variant="dark">
     <footer>
       <div class="social">
-        <a href="https://www.instagram.com/hammayunsafi/" class="btn-light btn-outline-info" target="_blank">
+        <a href="https://www.instagram.com/hama99o/" class="btn-light btn-outline-info" target="_blank">
           <i class="icon ion-social-instagram"></i>
         </a>
         <a href="https://github.com/Hama99o" class="btn-light btn-outline-info" target="_blank">
