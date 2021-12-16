@@ -22,9 +22,9 @@ module.exports = {
         browserName: 'chrome',
         chromeOptions: {
           args: [
-            '--headless',
             '--no-sandbox',
-            '--disable-gpu'
+            '--disable-gpu',
+            "window-size=1280,800"
           ]
         }
       }
