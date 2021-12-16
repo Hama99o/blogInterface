@@ -38,6 +38,19 @@ npm run build
 
 ## Test mode
 
+### Start the end2end test
+end2end tests is running backend on port 8082 automatically
+```
+npm run test:e2e
+```
+
+To run only specific tests, for example the `"--test tests/tests_e2e/tests/new.js"` tests :
+
+```
+npm run test:e2e --test tests/tests_e2e/tests/new.js
+
+```
+
 ### Start the test server
 Start the backend in test mode, on port 8083
 ```
