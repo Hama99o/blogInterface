@@ -40,7 +40,6 @@ describe('articles API', () => {
             res.should.have.status(200)
             res.body.should.be.a('object')
             res.body.should.have.property('title')
-            res.body.should.have.property('language').eq('ruby')
             res.body.id.should.eq(articleId)
             done()
           }
