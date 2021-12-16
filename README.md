@@ -73,7 +73,6 @@ To run both unit and e2e tests (don't forget to run Unit tests port 8083 '"npm r
 
 ```
 npm run test:all
-
 ```
 
 ### Lints and fixes files
