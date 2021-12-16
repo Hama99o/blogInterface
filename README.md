@@ -69,6 +69,13 @@ To run only specific tests, for example the `"Articles API"` tests :
 npm run test:unit -- -g "Articles API"
 ```
 
+To run both unit and e2e tests (don't forget to run Unit tests port 8083 '"npm run test:unit"' before launching all test) :
+
+```
+npm run test:all
+
+```
+
 ### Lints and fixes files
 
 For fixing lint auto error both vue and express side
