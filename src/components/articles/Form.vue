@@ -9,7 +9,7 @@
                     @onUpdate="onFieldUpdate"/>
 
       <div class="d-flex my-3">
-        <button type="button" :data-checked="checked" class="check-button btn btn-success mb-2 mr-2 submitButton" @click="createOrUpdateArticle()" >
+        <button type="button" :data-checked="checked" class="check-button btn btn-success mb-2 mr-2 submit-button" @click="createOrUpdateArticle()" >
           <i class="fas fa-exclamation-triangle" v-if="checked === 'error'"></i>
           <i class="fas fa-check-circle" v-if="checked === 'saved'"></i>
           <i class="fas fa-spinner fa-spin" v-if="checked === 'loading'"></i>
@@ -38,9 +38,7 @@ export default {
       hasBeenModified: false,
       artcileFields: {
         title: { type: 'text', name: 'Title', required: true },
-        content: { type: 'textarea', name: 'Content', required: true },
-        language: { type: 'select', name: 'Select language', options: { null: '-', Ruby: 'Ruby', php: 'PHP', JavaScript: 'JavaScript', Python: 'Python' } },
-        categories: { type: 'select', name: 'Categories', options: { null: '-', easy: 'Easy', normal: 'Normal', hard: 'hard' } }
+        content: { type: 'textarea', name: 'Content', required: true }
       }
     }
   },

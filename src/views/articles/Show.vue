@@ -30,13 +30,6 @@
       {{ article.content }}
     </article>
 
-    <p>language: {{ article.language }}</p>
-    <p>Categories:</p>
-
-    <ul>
-      <li>{{ article.categories }}</li>
-    </ul>
-
     <router-link to='/articles/new' exact class="text-decoration-none btn btn-info" type="button">
       <i class="fa fa-file-text mr-2" aria-hidden="true"></i>
       New Article
