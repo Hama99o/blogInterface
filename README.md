@@ -39,7 +39,7 @@ npm run build
 ## Test mode
 #### before testing you must check tests/requestsMocks.js
 * uncommente ```const factory = require('./factory.js')```
-* commentes all passThrough mocks ex: ```mock.onGet(articleRegex).passThrough()``` and uncommentes reply mocks ex: '"mock.onGet(articleRegex).reply(200, factory.article)"'
+* commentes all passThrough mocks ex: ```mock.onGet(articleRegex).passThrough()``` and uncommentes reply mocks ex: ```mock.onGet(articleRegex).reply(200, factory.article)```
 
 ### Start the end2end test
 end2end tests is running backend on port 8082 automatically
