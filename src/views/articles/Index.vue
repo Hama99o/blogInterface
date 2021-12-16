@@ -19,7 +19,7 @@
                     @goToPage="goToPage">
         </pagination>
       </div>
-      <div class="ml-auto p-2">
+      <div class="ml-auto p-2 new-article">
         <router-link :to="{ name: 'NewArticle' }" class="text-decoration-none btn btn-info" type="button">
           <i class="fa fa-file-text mr-2" aria-hidden="true"></i>
           New Article

@@ -1,6 +1,6 @@
 module.exports = {
 
-  url: 'http://localhost:8080/add',
+  url: 'http://localhost:8080/articles/new',
   elements: {
     title: '.title',
     content: '.content',
