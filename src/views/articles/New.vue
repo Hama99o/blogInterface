@@ -1,5 +1,5 @@
 <template>
-  <div id="add-article" class="container" >
+  <div id="new-article" class="container" >
     <router-link :to="{ name: 'Articles' }" class="my-4 back-to-index btn btn-outline-dark">
       <i class="fa fa-backward mr-1" aria-hidden="true"></i>
       Back

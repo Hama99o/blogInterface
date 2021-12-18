@@ -37,6 +37,22 @@ npm run build
 ```
 
 ## Test mode
+#### before testing you must check tests/requestsMocks.js
+* uncommente ```const factory = require('./factory.js')```
+* commentes all passThrough mocks ex: ```mock.onGet(articleRegex).passThrough()``` and uncommentes reply mocks ex: ```mock.onGet(articleRegex).reply(200, factory.article)```
+
+### Start the end2end test
+end2end tests is running backend on port 8082 automatically
+```
+npm run test:e2e
+```
+
+To run only specific tests, for example the `"--test tests/tests_e2e/tests/new.js"` tests :
+
+```
+npm run test:e2e --test tests/tests_e2e/tests/new.js
+
+```
 
 ### Start the test server
 Start the backend in test mode, on port 8083
@@ -54,6 +70,12 @@ To run only specific tests, for example the `"Articles API"` tests :
 
 ```
 npm run test:unit -- -g "Articles API"
+```
+
+To run both unit and e2e tests (don't forget to run Unit tests port 8083 '"npm run test:unit"' before launching all test) :
+
+```
+npm run test:all
 ```
 
 ### Lints and fixes files

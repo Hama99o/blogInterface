@@ -24,7 +24,8 @@ module.exports = {
           args: [
             '--headless',
             '--no-sandbox',
-            '--disable-gpu'
+            '--disable-gpu',
+            "window-size=1280,1000"
           ]
         }
       }

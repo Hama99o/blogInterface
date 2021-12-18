@@ -1,12 +1,9 @@
 module.exports = {
 
-  url: 'http://localhost:8080/add',
+  url: 'http://localhost:8080/articles/new',
   elements: {
-    title: '.title',
-    content: '.content',
-    valueEasy: '.custom-control-input[value="Easy"]',
-    selectLanguage: '.select-language',
-    language: '[value="Ruby"]',
+    title: '#article_title',
+    content: '#article_content',
     submitButton: '.submit-button'
   },
   commands: [{

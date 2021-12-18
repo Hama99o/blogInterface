@@ -14,7 +14,8 @@
     "start:test": "NODE_ENV=test Blog=blogDevelopment nodemon server/server.js",
     "test:e2e": "NODE_ENV=test nightwatch",
     "test:unit": "NODE_ENV=test mocha",
-    "all": "NODE_ENV=development npm-run-all --parallel serve start:dev"
+    "all": "NODE_ENV=development npm-run-all --parallel serve start:dev",
+    "test:all": "NODE_ENV=test npm-run-all --parallel test:e2e test:unit"
   },
   "dependencies": {
     "@babel/register": "^7.13.16",
@@ -42,7 +43,7 @@
     "babel-eslint": "^10.1.0",
     "chai": "^4.3.4",
     "chai-http": "^4.3.0",
-    "chromedriver": "^90.0.0",
+    "chromedriver": "^96.0.0",
     "eslint": "^7.27.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.23.3",

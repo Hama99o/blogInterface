@@ -15,8 +15,6 @@ module.exports = {
   article: {
     id: 20,
     title: 'ihsan',
-    content: 'ihsan',
-    categories: ['all'],
-    language: 'ruby'
+    content: 'ihsan'
   }
 }
