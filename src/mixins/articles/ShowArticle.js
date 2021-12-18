@@ -13,7 +13,7 @@ export default {
         'warning'
       ).then(() => {
         back.deleteArticle(id)
-        return this.$router.push({ name: 'Home' })
+        return this.$router.push({ name: 'Articles' })
       })
     }
   },
