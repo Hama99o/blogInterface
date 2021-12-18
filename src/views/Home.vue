@@ -70,7 +70,6 @@ nav ul li:hover {
   }
 }
 
-
 @media only screen and (max-width: 390px) {
   .responsive-text {
    font-size: 10px;

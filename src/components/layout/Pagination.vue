@@ -52,9 +52,9 @@ export default {
   props: ['nbPages', 'page', 'per'],
   computed: {
     pageIndexes () {
-      var allPages = []
-      var index = null
-      var max = null
+      const allPages = []
+      let index = null
+      let max = null
       if (this.nbPages > 9) {
         if (this.page >= 5) {
           if (this.page >= this.nbPages - 5) {

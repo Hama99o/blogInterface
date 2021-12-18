@@ -21,9 +21,9 @@ export default {
     erorrMessages () {
       if (this.errors && this.errors.response && this.errors.response.data && this.errors.response.data.message) {
         if (this.errors.response.data.errorData && typeof this.errors.response.data.errorData === 'object' && !Array.isArray(this.errors.response.data.errorData)) {
-        return Object.entries(this.errors.response.data.errorData).map(function (elem) {
-          return elem.join(' ')
-        })
+          return Object.entries(this.errors.response.data.errorData).map(function (elem) {
+            return elem.join(' ')
+          })
         } else {
           return [this.errors.response.data.message]
         }

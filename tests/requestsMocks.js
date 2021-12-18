@@ -23,7 +23,6 @@ const mockArticles = () => {
   // mock.onPost(articlesRegex).reply(200, factory.article)
   // mock.onPut(articleRegex).reply(200, factory.article)
   // mock.onDelete(articleRegex).reply(200)
-
 }
 module.exports = {
   init () {
