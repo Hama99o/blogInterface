@@ -35,6 +35,7 @@ export default {
       return response.data
     } catch (error) {
       this.errorMethod(error)
+      return error
     }
   },
   getArticles (search, page, per) {
