@@ -3,7 +3,7 @@
 
     <div class="d-flex my-4">
       <div class="p-2">
-        <router-link :to="{ name: 'ShowArticle', params: { id: article.id } }" class="mb-5 back-to-index btn btn-outline-dark">
+        <router-link :to="routeToShow()" class="mb-5 back-to-index btn btn-outline-dark">
           <i class="fa fa-backward mr-1" aria-hidden="true"></i>
           Back
         </router-link>
@@ -42,6 +42,9 @@ export default {
     async getArticle () {
       this.article = await back.getArticle(this.id)
       document.title = this.article.title
+    },
+    routeToShow () {
+      return { name: 'ShowArticle', params: { id: this.id } }
     }
   },
   mixins: [editArticle],

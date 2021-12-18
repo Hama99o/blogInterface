@@ -30,7 +30,7 @@
     <h1 class="mt-4">All Articles</h1>
 
     <div v-for="article in articles" class="single-article" v-bind:key="article.id" >
-      <router-link :to="{ name: 'ShowArticle', params: { id: article.id } }" class="text-decoration-none text-dark"><h2>{{article.title}}</h2>
+      <router-link :to="routeToShow(article.id)" class="text-decoration-none text-dark"><h2>{{article.title}}</h2>
         <article >
           {{article.content.substring(0, 200) + "..."}}
         </article>
@@ -79,6 +79,9 @@ export default {
     goToPage (pageIndex) {
       this.page = pageIndex
       this.defaultArticles()
+    },
+    routeToShow (id) {
+      return { name: 'ShowArticle', params: { id: id } }
     }
   },
   created: function () {

@@ -10,7 +10,7 @@
       </div>
 
       <div class="p-2">
-        <router-link :to="routeToEdit(article.id)"  class="mb-5 ml-3 btn btn-info">
+        <router-link :to="routeToEdit()"  class="mb-5 ml-3 btn btn-info">
           <i class="fa fa-pencil-square mr-2" aria-hidden="true"></i>
           Edit
         </router-link>
@@ -49,8 +49,8 @@ export default {
   },
   mixins: [showArticle],
   methods: {
-    routeToEdit (id) {
-      return { name: 'UpdateArticle', params: { id: id } }
+    routeToEdit () {
+      return { name: 'UpdateArticle', params: { id: this.id } }
     }
   }
 }
