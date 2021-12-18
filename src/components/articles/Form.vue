@@ -1,6 +1,6 @@
 <template>
   <div id="add-article" class="my-5" >
-
+    <error-messages :errors="errors" />
     <form class="my-4 form-container article-form" >
       <form-fields  :formFields="artcileFields"
                     formId="article"
@@ -25,15 +25,17 @@
 import FormFields from '@/components/form/FormFields'
 import editArticle from '@/mixins/articles/EditArticle.js'
 import newArticle from '@/mixins/articles/NewArticle.js'
+import ErrorMessages from '@/components/layout/ErrorMessages'
 
 export default {
-  components: { FormFields },
+  components: { FormFields, ErrorMessages },
   props: ['initArticle'],
   mixins: [editArticle, newArticle],
   data () {
     return {
       id: this.$route.params.id,
       article: {},
+      errors: null,
       checked: 'Save',
       hasBeenModified: false,
       artcileFields: {
@@ -79,19 +81,23 @@ label{
   display: block;
   margin: 20px 0 10px;
 }
+
 input[type="text"], textarea{
   display: block;
   width: 100%;
   padding: 8px;
 }
+
 h3{
   margin-top: 10px;
 }
+
 #checkboxes input{
   display:inline-block;
   margin-right:10px;
 
 }
+
 #checkboxes label{
   display:inline-block;
 }
