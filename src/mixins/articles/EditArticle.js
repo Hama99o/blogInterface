@@ -3,17 +3,18 @@ import back from '@/services/Back.js'
 export default {
   methods: {
     async updateArticle () {
-      try {
-        this.checked = 'loading'
-        await back.putArticle(this.article)
-        this.checked = 'saved'
-        await this.timeout(1000)
-        this.checked = 'save'
-        this.$router.push({ name: 'ShowArticle', params: { id: this.article.id } })
-      } catch {
+      this.checked = 'loading'
+      const article = await back.putArticle(this.article)
+      if (article.message) {
+        this.errors = article
         this.checked = 'error'
         await this.timeout(5000)
         this.checked = 'save'
+      } else {
+        this.checked = 'saved'
+        await this.timeout(1000)
+        this.checked = 'save'
+        this.$router.push({ name: 'ShowArticle', params: { id: article.id } })
       }
     },
     async deleteArticle (id, title) {
