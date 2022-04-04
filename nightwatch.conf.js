@@ -9,7 +9,6 @@ module.exports = {
     server_path: require('chromedriver').path,
     port: 8082
   },
-
   test_settings: {
     default: {
       screenshots: {
