@@ -16,7 +16,6 @@ const mockArticles = () => {
   mock.onPost(articlesRegex).passThrough()
   mock.onPut(articleRegex).passThrough()
   mock.onDelete(articleRegex).passThrough()
-
   // for testing
   // mock.onGet(articleRegex).reply(200, factory.article)
   // mock.onGet(articlesRegex).reply(200, { articles: factory.articles(), meta: { page: 0, per: 15, nb_pages: 3, search: '' } })
